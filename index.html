@@ -207,6 +207,14 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             width: auto;
             min-width: 250px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-block:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .cert-container {
@@ -263,6 +271,25 @@
         h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-top: 0; margin-bottom: 20px; border-bottom: 2px solid rgba(0,0,0,0.1); padding-bottom: 10px; }
         h4 { margin: 0 0 5px 0; font-size: 1.2rem; padding-right: 50px; }
         .date { font-size: 0.85rem; font-weight: bold; opacity: 0.7; text-transform: uppercase; }
+
+        .publication-sub {
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            display: block;
+            margin-top: -2px; /* Pulls it closer to the title above */
+        }
+
+        .formats {
+            margin: 25px 0 10px 0;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-black);
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 15px;
+        }
 
         .display-img {
             width: 100%;
@@ -346,7 +373,7 @@
 
         <header>
             <h1>Prayasha Nanda</h1>
-            <p class="tagline">Tech Enthusiast & Author of "Moon of Yesterday"</p>
+            <p class="tagline">Third Year AI/ML Student & Author of "Moon of Yesterday"</p>
         </header>
 
         <nav class="tabs">
@@ -414,15 +441,15 @@
                 </div>
 
                 <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
-                    <div class="stat-block">
+                    <a href="https://leetcode.com/u/prayasha_nanda/" target="_blank" class="stat-block">
                         <i class="fa-solid fa-code" style="color: #ffa116; font-size: 2rem;"></i>
                         <div>
                             <div style="font-weight: 700;">LeetCode</div>
                             <div style="font-size: 0.85rem; opacity: 0.8;">700+ Solved | Top 10% (1750 Rating)</div>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="stat-block">
+                    <div class="stat-block" style="cursor: default;">
                         <i class="fa-solid fa-user-shield" style="color: #4a90e2; font-size: 2rem;"></i>
                         <div>
                             <div style="font-weight: 700;">Secretary</div>
@@ -478,6 +505,7 @@
                             <li><a href="https://notionpress.com/in/read/moon-of-yesterday"><i class="fa-solid fa-store"></i> Notion Press Store</a></li>
                             <li><a href="https://www.goodreads.com/book/show/250377114-moon-of-yesterday"><i class="fa-brands fa-goodreads"></i> Goodreads</a></li>
                         </ul>
+                        <div class="formats" style = "opacity: 0.6;">Available in: paperback | hardcover | ebook</div>
                     </div>
                 </div>
             </div>
@@ -486,12 +514,12 @@
         <!-- Works Section -->
         <section id="works" class="content-section">
             <div class="glass-panel">
-                <h3>Academic & Publications</h3>
+                <h3>Academic & Literary Contributions</h3>
                 
                 <div class="card" style="margin-bottom: 20px;">
                     <span class="date">July 2025</span>
                     <h4>Transforming Education Through AI-Powered Personalized Assessment</h4>
-                    <p style="font-style: italic; font-size: 0.9rem;">Chapter 7 in "Adopting AI Tools in Higher Education – Student Assessment" | Taylor & Francis</p>
+                    <span class="publication-sub">Chapter 7 in "Adopting AI Tools in Higher Education – Student Assessment" | Taylor & Francis</span>
                     <p>Co-authored peer-reviewed research on AI-driven models for the Indian education system. Indexed in Scopus.</p>
                     <a href="https://doi.org/10.1201/9781003470304-7" style="font-size: 0.85rem; font-weight: bold; color: var(--accent-blue);">View DOI Link <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
@@ -499,10 +527,12 @@
                 <div class="card" style="margin-bottom: 20px;">
                     <span class="date">August 2025</span>
                     <h4>Elsewhere in August</h4>
+                    <span class="publication-sub">Paperoin Publications</span>
                     <p>Contributor to the poetry anthology <em>Elsewhere in August</em>, featuring my tribute poem to the famous artist <em>wowaka</em>, who changed the entire music industry forever with his high bpm (beats per minute) songs and lyrics that did not shy away from the harsh reality, using Vocaloid software.</p>
                 </div>
 
                 <div class="card">
+                    <span class="date">Present</span>
                     <h4>Technical Writing</h4>
                     <p>Regular contributor to the official technical blog for my college club, covering topics ranging from Digital Ownership to evolving landscape of Artificial Intelligence. I also write on my personal Medium.</p>
                 </div>
