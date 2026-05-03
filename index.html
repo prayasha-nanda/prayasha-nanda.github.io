@@ -223,18 +223,22 @@
             margin-top: 20px;
             overflow-x: auto;
             padding: 10px 0 20px 0;
-            align-items: stretch; /* Ensures all direct children share the same height */
+            align-items: stretch;
         }
 
         .cert-badge-wrapper {
             flex: 0 0 180px; 
             background: rgba(255, 255, 255, 0.4);
             border-radius: 12px;
-            height: 270px; /* Hardcoded to match Credly iframe height precisely */
+            height: 270px;
             display: flex;
             flex-direction: column;
             border: 1px solid var(--glass-border);
             overflow: hidden;
+        }
+
+        .cert-badge-wrapper.static-badge {
+            flex: 0 0 240px;
         }
 
         .cert-static {
@@ -243,15 +247,15 @@
             display: flex;
             flex-direction: column;
             text-align: center;
-            padding: 20px 15px;
+            padding: 15px;
         }
 
         .cert-static img {
             width: 100%;
-            height: 110px;
+            height: 130px;
             object-fit: contain;
             border-radius: 4px;
-            margin: 10px 0 25px 0;
+            margin: 10px 0 auto 0; 
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
         }
 
@@ -260,10 +264,10 @@
             font-weight: 700;
             color: var(--text-black);
             line-height: 1.3;
-            margin-top: auto;
-            margin-bottom: 25px;
+            margin-top: 10px;
+            margin-bottom: 20px;
         }
-
+        
         /* Typography */
         h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-top: 0; margin-bottom: 20px; border-bottom: 2px solid rgba(0,0,0,0.1); padding-bottom: 10px; }
         h4 { margin: 0 0 5px 0; font-size: 1.2rem; padding-right: 50px; }
@@ -468,7 +472,7 @@
                     </div>
 
                     <!-- NVIDIA (Static Image) -->
-                    <div class="cert-badge-wrapper">
+                    <div class="cert-badge-wrapper static-badge">
                         <div class="cert-static">
                             <img src="assets/nvidia.png" alt="NVIDIA Certification">
                             <div class="cert-label">NVIDIA Deep Learning Institute Certified</div>
