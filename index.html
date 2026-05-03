@@ -225,24 +225,54 @@
             align-items: stretch;
         }
 
-        /* Vertical container for Credly badges */
-        .credly-column {
+        .cert-container {
             display: flex;
-            gap: 15px;
+            gap: 20px;
+            margin-top: 20px;
+            overflow-x: auto;
+            padding-bottom: 20px;
             align-items: flex-start;
         }
 
-        .credly-badge-item {
-            flex: 0 0 170px;
+        .cert-badge-wrapper {
+            flex: 0 0 auto;
             background: rgba(255, 255, 255, 0.4);
             border-radius: 12px;
-            height: 270px;
+            padding: 15px;
+            min-height: 280px;
+            width: 180px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             border: 1px solid var(--glass-border);
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .cert-static {
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cert-static img {
+            width: 100%;
+            height: 110px;
+            object-fit: contain;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .cert-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-black);
+            margin-top: 10px;
+            max-width: 150px;
+            line-height: 1.2;
         }
 
         .standalone-card {
@@ -470,15 +500,15 @@
                 </div>
 
                 <h3 style="margin-top: 40px;">Certifications</h3>
-                <div class="certs-layout-wrapper">
-                    <!-- Credly Section -->
-                    <div class="credly-column">
-                        <div class="credly-badge-item">
-                            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="8ac857e1-aa74-4ce4-a6ec-fa278739074f" data-share-badge-host="https://www.credly.com"></div>
-                        </div>
-                        <div class="credly-badge-item">
-                            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="da0e6d12-d0b7-4a16-96fc-6a05f540bd53" data-share-badge-host="https://www.credly.com"></div>
-                        </div>
+                <div class="cert-container" id="cert-section">
+                    <!-- Amazon Credly -->
+                    <div class="cert-badge-wrapper">
+                        <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="8ac857e1-aa74-4ce4-a6ec-fa278739074f" data-share-badge-host="https://www.credly.com"></div>
+                    </div>
+                    
+                    <!-- Microsoft Credly -->
+                    <div class="cert-badge-wrapper">
+                        <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="da0e6d12-d0b7-4a16-96fc-6a05f540bd53" data-share-badge-host="https://www.credly.com"></div>
                     </div>
 
                     <!-- NVIDIA (Static Image) -->
