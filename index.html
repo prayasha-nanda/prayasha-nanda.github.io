@@ -222,31 +222,28 @@
             gap: 20px;
             margin-top: 20px;
             overflow-x: auto;
-            padding-bottom: 20px;
-            align-items: flex-start;
+            padding: 10px 0 20px 0;
+            align-items: stretch; /* Ensures all direct children share the same height */
         }
 
         .cert-badge-wrapper {
-            flex: 0 0 auto;
+            flex: 0 0 180px; 
             background: rgba(255, 255, 255, 0.4);
             border-radius: 12px;
-            padding: 15px;
-            min-height: 280px;
-            width: 180px;
+            height: 270px; /* Hardcoded to match Credly iframe height precisely */
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
             border: 1px solid var(--glass-border);
+            overflow: hidden;
         }
 
         .cert-static {
             width: 100%;
-            text-align: center;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            text-align: center;
+            padding: 20px 15px;
         }
 
         .cert-static img {
@@ -254,17 +251,17 @@
             height: 110px;
             object-fit: contain;
             border-radius: 4px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 10px 0 25px 0;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
         }
 
         .cert-label {
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             font-weight: 700;
             color: var(--text-black);
-            margin-top: 10px;
-            max-width: 150px;
-            line-height: 1.2;
+            line-height: 1.3;
+            margin-top: auto;
+            margin-bottom: 25px;
         }
 
         /* Typography */
@@ -277,7 +274,7 @@
             font-size: 0.9rem;
             margin-bottom: 12px;
             display: block;
-            margin-top: -2px; /* Pulls it closer to the title above */
+            margin-top: -2px;
         }
 
         .formats {
