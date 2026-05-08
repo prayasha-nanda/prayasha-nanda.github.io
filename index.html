@@ -32,11 +32,12 @@
         
         /* New Typography for Section Headers */
         .section-header { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; border-bottom: 2px solid var(--ink); padding-bottom: 0.5rem; margin-bottom: 2rem; }
+        
     </style>
 </head>
 <body class="p-2 md:p-8">
 
-    <div class="max-w-6xl mx-auto paper-grain p-4 md:p-10 min-h-screen relative shadow-2xl">
+    <div class="max-w-6xl mx-auto paper-grain p-4 md:p-10 px-3 md:px-10 min-h-screen relative shadow-2xl">
         
         <!-- Top Metadata -->
         <div class="flex justify-between items-center border-b border-black pb-2 mb-4 text-[10px] md:text-xs font-bold uppercase tracking-widest">
@@ -49,7 +50,7 @@
 
         <!-- Masthead -->
         <header class="masthead text-center pb-6 mb-4">
-            <h1 class="text-5xl md:text-8xl font-black mb-2 tracking-tighter">PRAYASHA NANDA</h1>
+            <h1 class="text-3xl md:text-8xl font-black mb-2 tracking-tighter">PRAYASHA NANDA</h1>
             <div class="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6 text-sm font-bold border-t border-black pt-4">
                 <span class="uppercase tracking-widest text-lg">AI / Machine Learning Engineer</span>
                 <span class="hidden md:block">•</span>
@@ -88,7 +89,7 @@
 
         <!-- Navigation -->
         <nav id = "nav" class="flex justify-center mb-10 sticky top-4 z-50">
-            <div class="glass-nav flex p-1 shadow-lg bg-white/80">
+            <div class="glass-nav flex flex-wrap justify-center gap-2 p-2 shadow-lg bg-white/80">
                 <button onclick="switchTab('front', 'front')" class="tab-btn active px-5 py-2 rounded-full text-xs font-black transition-all bg-black text-white" id="btn-front">FRONT PAGE</button>
                 <button onclick="switchTab('front', 'tech')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-tech">TECH PORTFOLIO</button>
                 <button onclick="switchTab('lit', 'lit')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-lit">LITERARY WORKS</button>
@@ -104,15 +105,15 @@
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
                     <div class="md:col-span-8 border-r-0 md:border-r border-black/10 pr-0 md:pr-8">
                         <span class="text-accent font-bold uppercase text-[10px] mb-1 block tracking-widest">Lead Editorial</span>
-                        <h2 class="headline text-4xl md:text-5xl font-black mb-4"> Data-Driven Astronomy Research Intern at <span class="text-blue-900">Indian Space Academy</span></h2>
+                        <h2 class="headline text-2xl md:text-5xl font-black mb-4"> Data-Driven Astronomy Research Intern at <span class="text-blue-900">Indian Space Academy</span></h2>
                         
-                        <div class="float-left w-48 h-48 overflow-hidden mr-5 mb-3 border border-black p-1 shadow-md bg-black">
+                        <div class="w-full md:w-48 md:h-48 mb-4 md:mb-0 md:float-left md:mr-5 border border-black p-1 shadow-md bg-black">
                             <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover grayscale contrast-125 opacity-80" alt="Space Research">
                         </div>
 
                         <div>
-                            <p class="dropcap mb-4 text-justify text-sm leading-relaxed">During my internship at the Indian Space Academy, I addressed the challenge of estimating the Hubble constant through Type Ia supernovae data. I developed a computational Lambda-CDM framework using <strong>Python, NumPy, and Astropy</strong>. The outcome was a robust simulation model that processed cosmological datasets to achieve a precise estimate of the expansion rate of the universe.</p>
-                            <p class="text-sm text-justify leading-relaxed">My focus remains on the intersection of <strong>Deep Learning</strong> and scientific discovery, bridging the gap between raw astrophysical data and theoretical modeling in high-stakes research environments.</p>
+                            <p class="dropcap mb-4 text-justify text-sm leading-relaxed">During my internship at the Indian Space Academy, I completed 120 hours of training in the Astronomy and Astrophysics Summer School 2025, focusing on data-driven approaches to modern cosmology. As part of my project work on Supernova Cosmology, I built a Lambda-CDM computational model using Type Ia supernovae data to estimate the Hubble constant and analyze the expansion history of the Universe, aligning results with late-universe (SH0ES) measurements.</p>
+                            <p class="text-sm text-justify leading-relaxed">The work involved developing and testing numerical pipelines in Python using tools such as NumPy, pandas, SciPy, Matplotlib, and Astropy, strengthening my understanding of how theoretical cosmology can be translated into computational models driven by real observational data.</p>
                         </div>
                     </div>
 
@@ -218,7 +219,7 @@
                         </div>
 
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-3xl font-black uppercase tracking-tighter leading-none">
+                            <h3 class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none">
                                 ASL TO HINDI<br>TRANSLATOR
                             </h3>
 
@@ -250,7 +251,7 @@
                         </div>
 
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-3xl font-black uppercase tracking-tighter leading-none">
+                            <h3 class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none">
                                 CRIMSON<br>PATHFINDER
                             </h3>
 
@@ -276,7 +277,7 @@
                         <div class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest">
                             <span class="border border-black px-2 py-1">React</span>
                             <span class="border border-black px-2 py-1">Three.js</span>
-                            <span class="border border-black px-2 py-1">Algorithms</span>
+                            <span class="border border-black px-2 py-1">A* Algorithm</span>
                         </div>
                     </div>
 
@@ -288,7 +289,7 @@
                         </div>
 
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-3xl font-black uppercase tracking-tighter leading-none">
+                            <h3 class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none">
                                 NLP TIMELINE<br>ANALYSIS
                             </h3>
 
@@ -316,7 +317,7 @@
                         </div>
 
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-3xl font-black uppercase tracking-tighter leading-none">
+                            <h3 class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none">
                                 MESSAGE IN<br>A BOTTLE
                             </h3>
 
@@ -342,12 +343,8 @@
                 </div>
 
                 <!-- Github Link -->
-                <div class="mt-5 text-center">
-                    <a 
-                        href="https://github.com/prayasha-nanda" 
-                        target="_blank"
-                        class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] opacity-70 hover:opacity-100 hover:tracking-[0.4em] hover:underline transition-all duration-300"
-                    >
+                <div class="mt-10 text-center">
+                    <a href="https://github.com/prayasha-nanda" target="_blank" class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] opacity-70 hover:opacity-100 hover:tracking-[0.4em] hover:underline transition-all duration-300">
                         <span>See More on GitHub</span>
                     </a>
                 </div>
@@ -368,7 +365,7 @@
                     </div>
                     <div class="md:col-span-2">
                         <span class="bg-black text-white px-2 py-0.5 text-[10px] font-bold uppercase mb-2 inline-block">Academic Contribution // July 2025</span>
-                        <h3 class="headline text-5xl font-black mb-4">Transforming Education Through AI-Powered Personalized Assessment</h3>
+                        <h3 class="headline text-xl md:text-5xl font-black mb-4">Transforming Education Through AI-Powered Personalized Assessment</h3>
                         <h4 class="text-xl font-black mb-4">Chapter 7, "Adopting AI Tools in Higher Education – Student Assessment"</h4>
                         <p class="text-xl italic mb-4">Co-authored peer-reviewed research on AI-driven models for the Indian education system. Indexed in Scopus.</p>
                         <p class="text-lg text-justify mb-6 leading-relaxed">My work in this chapter focused on adapting AI-driven assessment methodologies to the Indian education system. I was challenged to consider the complexities of local contexts, giving me a broader appreciation for the potential and limitations of AI in education.
@@ -381,9 +378,9 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                     <div class="md:col-span-2 text-right order-2 md:order-1">
                         <span class="bg-black text-white px-2 py-0.5 text-[10px] font-bold uppercase mb-2 inline-block">Debut Novel // March 2026</span>
-                        <h3 class="headline text-5xl font-black mb-4">Moon of Yesterday</h3>
-                        <p class="text-lg italic mb-4">"Time can shatter people's reality, and people can shatter reality for time."</p>
-                        <p class="text-sm mb-6 leading-relaxed">My debut novel is a contemporary soft sci-fi exploration of memory, time, and the weight of grief. Published globally via Notion Press, it delves into the human cost of temporal mechanics.</p>
+                        <h3 class="headline text-xl md:text-5xl font-black mb-4">Moon of Yesterday</h3>
+                        <p class="text-xl italic mb-4">"Time can shatter people's reality, and people can shatter reality for time."</p>
+                        <p class="text-lg text-justify mb-6 leading-relaxed">My debut novel is a contemporary soft sci-fi exploration of memory, time, and the weight of grief. Published globally via Notion Press, it delves into the human cost of temporal mechanics.</p>
                         <a href="https://www.amazon.in/dp/B0GTPS5BLY" target="_blank" class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block">View on Amazon</a>
                         <a href="https://www.goodreads.com/book/show/250377114-moon-of-yesterday" target="_blank" class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block">Find on Goodreads</a>
                     </div>
@@ -392,7 +389,7 @@
                     </div>
                 </div>
 
-                <!-- 3. Short Cards (Poetry & Medium) -->
+                <!-- 3. Short Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t-2 border-black pt-12">
                     <div class="p-6 border-l-4 border-black bg-white/30">
                         <div class="text-[10px] font-black uppercase opacity-60 mb-1">August 2025 • Paperoin Publications</div>
@@ -414,23 +411,29 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="md:col-span-1 flex justify-center">
             <div class="w-full max-w-[320px] h-[240px] overflow-hidden rounded-md border-4 border-black shadow-xl">
-                <img
-                    src="assets/auth_prayasha_square.jpeg"
-                    alt="Prayasha Nanda"
-                    class="w-full h-auto object-cover block"
-                >
+                <img src="assets/auth_prayasha_square.jpeg" alt="Prayasha Nanda" class="w-full h-auto object-cover block">
             </div>
+
             </div>
                 <div class="md:col-span-3">
-                    <h2 class="headline text-5xl font-black mb-6">The Professional Biography</h2>
-                    <p class="text-lg mb-4 text-justify font-bold italic leading-tight">I am a B.Tech AI & ML student at VIT Chennai specializing in data-driven systems and astrophysical computation.</p>
-                    <p class="text-sm mb-4 text-justify leading-relaxed">My technical journey is defined by high-intensity problem solving, having solved over <strong>700 LeetCode problems</strong>. As the <strong>Secretary of the Tech Researchers Club</strong>, I bridge the gap between algorithmic research and community leadership.</p>
-                    <p class="text-sm text-justify leading-relaxed">I balance strict logic with creative world-building, using my experience as a published author to communicate complex technical ideas through clear, narrative-driven design.</p>
+                    <p class="headline text-lg mb-4 text-justify font-bold leading-tight">Final year B.Tech AI & ML student at VIT Chennai, with a strong focus on building and understanding data-driven systems.</p>
+                    <p class="text-sm mb-4 text-justify leading-relaxed">My work revolves around areas like natural language processing and computer vision, using tools such as Python and TensorFlow to design and experiment with models that learn patterns in data. I’m interested in how abstract mathematical concepts translate into real-world intelligent behavior.</p>
+                    <p class="text-sm text-justify leading-relaxed">Beyond coursework, I actively contribute to university club activities, collaborating on technical and creative initiatives in team environments.<br>I balance strict logic with creative world-building, using my experience as a published author to communicate complex technical ideas through clear, narrative-driven design.</p>
                     
-                    <div class="mt-8 pt-6 border-t border-black flex flex-wrap gap-4">
-                        <a href="mailto:prayasha.nanda@gmail.com" class="text-xs font-black uppercase underline decoration-accent decoration-2">Email</a>
-                        <a href="https://linkedin.com/in/prayasha-nanda" class="text-xs font-black uppercase underline decoration-accent decoration-2">LinkedIn</a>
-                        <a href="https://github.com/prayasha-nanda" class="text-xs font-black uppercase underline decoration-accent decoration-2">GitHub</a>
+                    <div class="mt-8 pt-6 border-t border-black flex flex-wrap gap-3">
+
+                        <a class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition">
+                            <i class="fa-solid fa-envelope mr-2"></i>Email
+                        </a>
+
+                        <a class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition">
+                            <i class="fa-brands fa-linkedin mr-2"></i>LinkedIn
+                        </a>
+
+                        <a class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition">
+                            <i class="fa-brands fa-github mr-2"></i>GitHub
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -447,7 +450,7 @@
 
     <!-- Floating Resume Button -->
     <a href="https://drive.google.com/file/d/19ciAUXxSMwUDOjSAou_bnArSC8irphF5/view"
-        class="fixed bottom-5 right-5 bg-black text-white px-5 py-3 text-xs font-black uppercase shadow-xl hover:bg-red-700 z-[60] transition-colors">
+        class="fixed bottom-5 right-5 bg-black text-white px-5 py-3 text-base font-black uppercase shadow-xl hover:bg-red-700 z-[60] transition-colors">
         Resume
     </a>
 
