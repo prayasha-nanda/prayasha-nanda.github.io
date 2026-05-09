@@ -15,9 +15,11 @@ It includes:
 ## Tech Stack
 
 - HTML5
-- CSS3 (glassmorphism layout)
-- Vanilla JavaScript (tab navigation)
-- Font Awesome (icons)
+- Tailwind CSS for responsive layout and utility styling
+- Custom CSS for typography and newspaper-inspired design
+- Vanilla JavaScript for navigation and UI interactions
+- Font Awesome for iconography
+- Google Fonts for typography
 
 ## Deployment
 
