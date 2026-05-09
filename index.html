@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root { --paper: #f9f7f2; --ink: #1a1a1a; --accent: #bc382e; }
+        .text-accent { color: var(--accent); }
         body { background-color: #d1d1d1; font-family: 'Crimson Pro', serif; color: var(--ink); scroll-behavior: smooth; }
         .paper-grain { background-color: var(--paper); background-image: url("https://www.transparenttextures.com/patterns/felt.png"); box-shadow: 0 0 50px rgba(0,0,0,0.2); }
         .masthead { border-bottom: 5px double var(--ink); font-family: 'Playfair Display', serif; }
@@ -18,14 +19,14 @@
         .glass-nav { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(0,0,0,0.1); border-radius: 50px; }
         @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
         .ticker-wrap { overflow: hidden; background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 800; text-transform: uppercase; font-size: 0.75rem; }
-        .ticker-content { display: inline-block; white-space: nowrap; animation: ticker 25s linear infinite; }
+        .ticker-content { display: inline-block; white-space: nowrap; animation: ticker 25s linear infinite; will-change: transform; }
         .dropcap::first-letter { float: left; font-size: 3.5rem; line-height: 0.8; padding-right: 8px; font-weight: 900; font-family: 'Playfair Display', serif; color: var(--ink); }
         
         .page-container { display: none; }
         .page-container.active { display: block; animation: fadeIn 0.4s ease-in; }
         
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .tldr-strip { border-y: 2px solid var(--ink); background: #fffcf5; }
+        .tldr-strip { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); solid var(--ink); background: #fffcf5; }
         .project-label { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.65rem; text-transform: uppercase; color: var(--accent); display: block; margin-top: 0.5rem; }
         
         .section-divider { border-top: 4px double var(--ink); margin-top: 4rem; padding-top: 4rem; }
@@ -42,8 +43,8 @@
         <!-- Top Metadata -->
         <div class="flex justify-between items-center border-b border-black pb-2 mb-4 text-[10px] md:text-xs font-bold uppercase tracking-widest">
             <div>VOL. XIII ... NO. 2026</div>
-            <div id="datetime" class="hidden md:block text-accent"></div>
-            <a href="https://drive.google.com/file/d/19ciAUXxSMwUDOjSAou_bnArSC8irphF5/view?usp=sharing" target="_blank" class="hover:text-accent underline decoration-2 transition-all">
+            <div id="datetime" class="hidden md:block"></div>
+            <a href="https://drive.google.com/file/d/19ciAUXxSMwUDOjSAou_bnArSC8irphF5/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="hover:text-accent underline decoration-2 transition-all">
                 <i class="fa-solid fa-file-lines mr-1"></i> RESUME.PDF
             </a>
         </div>
@@ -90,10 +91,10 @@
         <!-- Navigation -->
         <nav id = "nav" class="flex justify-center mb-10 sticky top-4 z-50">
             <div class="glass-nav flex flex-wrap justify-center gap-2 p-2 shadow-lg bg-white/80">
-                <button onclick="switchTab('front', 'front')" class="tab-btn active px-5 py-2 rounded-full text-xs font-black transition-all bg-black text-white" id="btn-front">FRONT PAGE</button>
-                <button onclick="switchTab('front', 'tech')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-tech">TECH PORTFOLIO</button>
-                <button onclick="switchTab('lit', 'lit')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-lit">LITERARY WORKS</button>
-                <button onclick="switchTab('about', 'about')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-about">BIOGRAPHY</button>
+                <button onclick="switchTab('front-page', 'front')" class="tab-btn active px-5 py-2 rounded-full text-xs font-black transition-all bg-black text-white" id="btn-front">FRONT PAGE</button>
+                <button onclick="switchTab('front-page', 'tech')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-tech">TECH PORTFOLIO</button>
+                <button onclick="switchTab('lit-page')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-lit">LITERARY WORKS</button>
+                <button onclick="switchTab('about')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-about">BIOGRAPHY</button>
                 <button onclick="switchTab('about', 'contact')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-contact">CONTACT ME</button>
             </div>
         </nav>
@@ -109,7 +110,7 @@
                         <h2 class="headline text-2xl md:text-5xl font-black mb-4"> Data-Driven Astronomy Research Intern at <span class="text-blue-900">Indian Space Academy</span></h2>
                         
                         <div class="w-full md:w-48 md:h-48 mb-4 md:mb-0 md:float-left md:mr-5 border border-black p-1 shadow-md bg-black">
-                            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover grayscale opacity-70" alt="Space Research">
+                            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&q=80&w=1200" loading="lazy" class="w-full h-full object-cover grayscale opacity-70" alt="Space Research">
                         </div>
 
                         <div>
@@ -124,15 +125,15 @@
                             <div class="space-y-4">
                                 <div>
                                     <span class="text-[15px] font-black uppercase opacity-60">Languages & Tools</span>
-                                    <p class="text-s font-bold leading-tight uppercase">Python, Java, C, Git</p>
+                                    <p class="text-sm font-bold leading-tight uppercase">Python, Java, C, Git</p>
                                 </div>
                                 <div>
                                     <span class="text-[15px] font-black uppercase opacity-60">AIML & Data Science</span>
-                                    <p class="text-s font-bold leading-tight uppercase">TensorFlow, Scikit-learn, OpenCV, MediaPipe, Pandas, NumPy, Astropy</p>
+                                    <p class="text-sm font-bold leading-tight uppercase">TensorFlow, Scikit-learn, OpenCV, MediaPipe, Pandas, NumPy, Astropy</p>
                                 </div>
                                 <div>
                                     <span class="text-[15px] font-black uppercase opacity-60">Web Engineering</span>
-                                    <p class="text-s font-bold leading-tight uppercase">React, Next.js, Node.js, Tailwind CSS</p>
+                                    <p class="text-sm font-bold leading-tight uppercase">React, Next.js, Node.js, Tailwind CSS</p>
                                 </div>
                             </div>
                         </div>
@@ -140,8 +141,8 @@
                         <div class="bg-black text-white p-4">
                             <h3 class="font-black uppercase text-base mb-2 border-b border-white/20 pb-1">Contact</h3>
                             <div class="space-y-2">
-                                <a href="mailto:prayasha.nanda@gmail.com" class="block text-s font-bold underline hover:text-accent"><i class="fa-solid fa-envelope mr-2"></i>prayasha.nanda@gmail.com</a>
-                                <a href="https://linkedin.com/in/prayasha-nanda" class="block text-s font-bold underline hover:text-accent"><i class="fa-brands fa-linkedin-in mr-2"></i>linkedin.com/in/prayasha-nanda</a>
+                                <a href="mailto:prayasha.nanda@gmail.com" class="block text-sm font-bold underline hover:text-accent"><i class="fa-solid fa-envelope mr-2"></i>prayasha.nanda@gmail.com</a>
+                                <a href="https://linkedin.com/in/prayasha-nanda" class="block text-sm font-bold underline hover:text-accent"><i class="fa-brands fa-linkedin-in mr-2"></i>linkedin.com/in/prayasha-nanda</a>
                             </div>
                         </div>
                     </div>
@@ -167,7 +168,8 @@
                         </p>
 
                         <a href="https://leetcode.com/u/prayasha_nanda/" 
-                        target="_blank"
+                        target="_blank" 
+                        rel="noopener noreferrer" 
                         class="text-[10px] font-black uppercase underline mt-3 inline-block tracking-[0.15em] hover:tracking-[0.25em] transition-all duration-300">
                             View Profile →
                         </a>
@@ -201,7 +203,8 @@
                         </p>
 
                         <a href="https://www.linkedin.com/in/prayasha-nanda/details/certifications/" 
-                        target="_blank"
+                        target="_blank" 
+                        rel="noopener noreferrer" 
                         class="text-[10px] font-black uppercase underline mt-3 inline-block tracking-[0.15em] hover:tracking-[0.25em] transition-all duration-300">
                             View Credentials →
                         </a>
@@ -226,7 +229,9 @@
 
                             <div class="flex gap-3 text-sm mt-1">
                                 <a href="https://github.com/prayasha-nanda/ASL_Hindi_Translator" 
+                                aria-label="GitHub Repository" 
                                 target="_blank" 
+                                rel="noopener noreferrer" 
                                 class="hover:text-accent transition">
                                     <i class="fa-brands fa-github"></i>
                                 </a>
@@ -258,13 +263,17 @@
 
                             <div class="flex gap-3 text-sm mt-1">
                                 <a href="https://github.com/prayasha-nanda/CrimsonPathfinder3D" 
+                                aria-label="GitHub Repository" 
                                 target="_blank" 
+                                rel="noopener noreferrer" 
                                 class="hover:text-accent transition">
                                     <i class="fa-brands fa-github"></i>
                                 </a>
 
                                 <a href="https://crimson-pathfinder.vercel.app/" 
+                                aria-label="Vercel Deployment" 
                                 target="_blank" 
+                                rel="noopener noreferrer" 
                                 class="hover:text-accent transition">
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
@@ -324,7 +333,9 @@
 
                             <div class="flex gap-3 text-sm mt-1">
                                 <a href="https://github.com/prayasha-nanda/message-in-a-bottle" 
+                                aria-label="GitHub Repository" 
                                 target="_blank" 
+                                rel="noopener noreferrer" 
                                 class="hover:text-accent transition">
                                     <i class="fa-brands fa-github"></i>
                                 </a>
@@ -345,7 +356,7 @@
 
                 <!-- Github Link -->
                 <div class="mt-10 text-center">
-                    <a href="https://github.com/prayasha-nanda" target="_blank" class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] opacity-70 hover:opacity-100 hover:tracking-[0.4em] hover:underline transition-all duration-300">
+                    <a href="https://github.com/prayasha-nanda" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] opacity-70 hover:opacity-100 hover:tracking-[0.4em] hover:underline transition-all duration-300">
                         <span>See More on GitHub</span>
                     </a>
                 </div>
@@ -371,7 +382,7 @@
                         <p class="text-xl italic mb-4">Co-authored peer-reviewed research on AI-driven models for the Indian education system. Indexed in Scopus.</p>
                         <p class="text-lg text-justify mb-6 leading-relaxed">My work in this chapter focused on adapting AI-driven assessment methodologies to the Indian education system. I was challenged to consider the complexities of local contexts, giving me a broader appreciation for the potential and limitations of AI in education.
                             It was a deep learning process that sharpened my understanding of how AI tools must be contextualized to be effective, equitable, and sustainable.</p>
-                        <a href="https://doi.org/10.1201/9781003470304-7" target="_blank" class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block">View DOI Link</a>
+                        <a href="https://doi.org/10.1201/9781003470304-7" target="_blank" rel="noopener noreferrer" class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block">View DOI Link</a>
                     </div>
                 </div>
 
@@ -382,11 +393,11 @@
                         <h3 class="headline text-2xl md:text-5xl font-black mb-4">Moon of Yesterday</h3>
                         <p class="text-xl italic mb-4">"Time can shatter people's reality, and people can shatter reality for time."</p>
                         <p class="text-lg mb-6 leading-relaxed">My debut novel is a contemporary soft sci-fi exploration of memory, time, and the weight of grief. Published globally via Notion Press, it follows Lyra on a journey as she slips through the cracks of time and learns to let go, confronting a haunting truth: some scars shape who we become, and healing them may come at the cost of everything that made us human.</p>
-                        <a href="https://www.amazon.in/dp/B0GTPS5BLY" target="_blank" class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block">View on Amazon</a>
-                        <a href="https://www.goodreads.com/book/show/250377114-moon-of-yesterday" target="_blank" class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block">Find on Goodreads</a>
+                        <a href="https://www.amazon.in/dp/B0GTPS5BLY" target="_blank" rel="noopener noreferrer" class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block">View on Amazon</a>
+                        <a href="https://www.goodreads.com/book/show/250377114-moon-of-yesterday" target="_blank" rel="noopener noreferrer" class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block">Find on Goodreads</a>
                     </div>
                     <div class="md:col-span-1 border-4 border-black p-1 shadow-lg bg-white order-1 md:order-2">
-                        <img src="assets/MoY_cover.jpg" class="w-full object-cover" alt="Moon of Yesterday">
+                        <img src="assets/MoY_cover.jpg" loading="lazy" class="w-full object-cover" alt="Moon of Yesterday">
                     </div>
                 </div>
 
@@ -412,7 +423,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="md:col-span-1 flex justify-center">
             <div class="w-full max-w-[320px] aspect-square overflow-hidden rounded-md border-4 border-black shadow-xl">
-                <img src="assets/prayasha_nanda.png" alt="Prayasha Nanda" class="min-w-full min-h-full object-cover">
+                <img src="assets/prayasha_nanda.png" loading="lazy" alt="Prayasha Nanda" class="min-w-full min-h-full object-cover">
             </div>
 
             </div>
@@ -423,15 +434,15 @@
                     
                     <div class="mt-8 pt-6 border-t border-black flex flex-wrap gap-3">
 
-                        <a class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition">
+                        <a href="mailto:prayasha.nanda@gmail.com" class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition">
                             <i class="fa-solid fa-envelope mr-2"></i>Email
                         </a>
 
-                        <a class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition">
+                        <a href="https://linkedin.com/in/prayasha-nanda" target="_blank" rel="noopener noreferrer" class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition">
                             <i class="fa-brands fa-linkedin mr-2"></i>LinkedIn
                         </a>
 
-                        <a class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition">
+                        <a href="https://github.com/prayasha-nanda" target="_blank" rel="noopener noreferrer" class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition">
                             <i class="fa-brands fa-github mr-2"></i>GitHub
                         </a>
 
@@ -456,6 +467,7 @@
 
                     <!-- Form -->
                     <form action="https://formspree.io/f/mnnpvwrz"  method="POST" class="p-5 md:p-8 space-y-6">
+                        <input type="hidden" name="_next" value="https://prayasha-nanda.github.io">
 
                         <!-- Name -->
                         <div>
@@ -532,49 +544,57 @@
     </div>
 
     <!-- Floating Resume Button -->
-    <a href="https://drive.google.com/file/d/19ciAUXxSMwUDOjSAou_bnArSC8irphF5/view"
+    <a href="https://drive.google.com/file/d/19ciAUXxSMwUDOjSAou_bnArSC8irphF5/view" target="_blank" rel="noopener noreferrer" aria-label="Open Resume PDF"
         class="fixed bottom-5 right-5 bg-black text-white px-5 py-3 text-base font-black uppercase shadow-xl hover:bg-red-700 z-[60] transition-colors">
         Resume
     </a>
 
     <script>
-        function switchTab(pageId, anchorId) {
-            document.querySelectorAll('.page-container').forEach(container => container.classList.remove('active'));
+        function switchTab(pageId, anchorId = null) {
 
+            // Hide all page containers
+            document.querySelectorAll('.page-container').forEach(page => page.classList.remove('active'));
+
+            // Show selected page
             const targetPage = document.getElementById(pageId);
+
+            if (!targetPage) return;
 
             targetPage.classList.add('active');
 
+            // Reset all buttons
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('bg-black', 'text-white'));
 
+            // Highlight active button
             const btnMap = {
-                'front': 'btn-front',
+                'front-page': 'btn-front',
                 'tech': 'btn-tech',
-                'lit': 'btn-lit',
+                'lit-page': 'btn-lit',
                 'about': 'btn-about',
                 'contact': 'btn-contact'
             };
 
-            const activeBtn = document.getElementById(btnMap[anchorId]);
+            const activeBtn = document.getElementById(
+                btnMap[anchorId || pageId]
+            );
 
-            if (activeBtn)
+            if (activeBtn) {
                 activeBtn.classList.add('bg-black', 'text-white');
+            }
 
-            // Scroll Logic
-            const nav = document.getElementById('nav');
-            const navOffset = nav ? nav.offsetHeight + 40 : 100;
-
-            if (
-                anchorId === 'front' ||
-                anchorId === 'tech' ||
-                anchorId === 'about' ||
-                anchorId === 'contact'
-            ) {
-
+            // Scroll to section if needed
+            if (anchorId) {
                 const element = document.getElementById(anchorId);
 
                 if (element) {
-                    const y = element.getBoundingClientRect().top + window.pageYOffset - navOffset;
+
+                    const nav = document.getElementById('nav');
+                    const offset = nav ? nav.offsetHeight + 40 : 100;
+
+                    const y =
+                        element.getBoundingClientRect().top +
+                        window.pageYOffset -
+                        offset;
 
                     window.scrollTo({
                         top: y,
@@ -583,22 +603,11 @@
                 }
 
             } else {
-                const element = document.getElementById(pageId + "-page");
-                if (element) {
-                    const y = element.getBoundingClientRect().top + window.pageYOffset - navOffset;
 
-                    window.scrollTo({
-                        top: y,
-                        behavior: 'smooth'
-                    });
-
-                } else {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-
-                }
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             }
         }
 
