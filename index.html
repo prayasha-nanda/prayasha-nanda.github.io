@@ -26,7 +26,7 @@
         .page-container.active { display: block; animation: fadeIn 0.4s ease-in; }
         
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .tldr-strip { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); solid var(--ink); background: #fffcf5; }
+        .tldr-strip { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); background: #fffcf5; }
         .project-label { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.65rem; text-transform: uppercase; color: var(--accent); display: block; margin-top: 0.5rem; }
         
         .section-divider { border-top: 4px double var(--ink); margin-top: 4rem; padding-top: 4rem; }
@@ -551,15 +551,12 @@
 
     <script>
         function switchTab(pageId, anchorId = null) {
-
             // Hide all page containers
             document.querySelectorAll('.page-container').forEach(page => page.classList.remove('active'));
 
             // Show selected page
             const targetPage = document.getElementById(pageId);
-
             if (!targetPage) return;
-
             targetPage.classList.add('active');
 
             // Reset all buttons
@@ -574,75 +571,51 @@
                 'contact': 'btn-contact'
             };
 
-            const activeBtn = document.getElementById(
-                btnMap[anchorId || pageId]
-            );
-
+            const activeBtn = document.getElementById(btnMap[anchorId || pageId]);
             if (activeBtn) {
                 activeBtn.classList.add('bg-black', 'text-white');
             }
 
-            // Scroll to section if needed
+            // Scroll logic
             if (anchorId) {
-                const element = document.getElementById(anchorId);
+                // Use requestAnimationFrame to wait for the browser to render the 'active' class
+                requestAnimationFrame(() => {
+                    const element = document.getElementById(anchorId);
+                    if (element) {
+                        const nav = document.getElementById('nav');
+                        const offset = nav ? nav.offsetHeight + 40 : 100;
+                        const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
 
-                if (element) {
-
-                    const nav = document.getElementById('nav');
-                    const offset = nav ? nav.offsetHeight + 40 : 100;
-
-                    const y =
-                        element.getBoundingClientRect().top +
-                        window.pageYOffset -
-                        offset;
-
-                    window.scrollTo({
-                        top: y,
-                        behavior: 'smooth'
-                    });
-                }
-
-            } else {
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
                 });
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
 
         function updateDateTime() {
             const now = new Date();
-
-            const date = now.toLocaleDateString('en-IN', {
-                weekday: 'short',
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric'
-            });
-
-            const time = now.toLocaleTimeString('en-IN', {
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-
-            document.getElementById('datetime').textContent = `${date}   ${time}`;}
-
+            const date = now.toLocaleDateString('en-IN', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+            const time = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+            document.getElementById('datetime').textContent = `${date}   ${time}`;
+        }
         updateDateTime();
         setInterval(updateDateTime, 25000);
 
         window.addEventListener('scroll', () => {
+            const nav = document.getElementById('nav');
+            if (!nav) return;
+            const scrollPos = window.scrollY + nav.offsetHeight + 100;
+
+            // Logic for Front-Page (Tech vs Front)
             const frontPage = document.getElementById('front-page');
             if (frontPage && frontPage.classList.contains('active')) {
                 const techSection = document.getElementById('tech');
-                const nav = document.getElementById('nav');
-                if (!techSection || !nav) return;
-                
-                const scrollPos = window.scrollY + nav.offsetHeight + 100;
                 const frontBtn = document.getElementById('btn-front');
                 const techBtn = document.getElementById('btn-tech');
-                
-                if (scrollPos >= techSection.offsetTop) {
+
+                if (techSection && scrollPos >= techSection.offsetTop) {
                     frontBtn.classList.remove('bg-black', 'text-white');
                     techBtn.classList.add('bg-black', 'text-white');
                 } else {
@@ -650,7 +623,24 @@
                     frontBtn.classList.add('bg-black', 'text-white');
                 }
             }
+
+            // Logic for About Page (About vs Contact)
+            const aboutPage = document.getElementById('about');
+            if (aboutPage && aboutPage.classList.contains('active')) {
+                const contactSection = document.getElementById('contact');
+                const aboutBtn = document.getElementById('btn-about');
+                const contactBtn = document.getElementById('btn-contact');
+
+                if (contactSection && scrollPos >= contactSection.offsetTop) {
+                    aboutBtn.classList.remove('bg-black', 'text-white');
+                    contactBtn.classList.add('bg-black', 'text-white');
+                } else {
+                    contactBtn.classList.remove('bg-black', 'text-white');
+                    aboutBtn.classList.add('bg-black', 'text-white');
+                }
+            }
         });
+
     </script>
 </body>
 </html>
