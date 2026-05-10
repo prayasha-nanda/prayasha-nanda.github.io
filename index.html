@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Prayasha Nanda — AI/ML Engineer, Researcher, and Author.">
+    <meta property="og:title" content="Prayasha Nanda | Tech & Tales">
+    <meta property="og:description" content="AI/ML Engineer, Researcher, and Developer Portfolio">
+    <meta property="og:type" content="website">
     <title>Prayasha Nanda | Tech & Tales</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -27,7 +31,7 @@
         
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .tldr-strip { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); background: #fffcf5; }
-        .project-label { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.65rem; text-transform: uppercase; color: var(--accent); display: block; margin-top: 0.5rem; }
+        /* .project-label { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.65rem; text-transform: uppercase; color: var(--accent); display: block; margin-top: 0.5rem; } */
         
         .section-divider { border-top: 4px double var(--ink); margin-top: 4rem; padding-top: 4rem; }
         
@@ -90,12 +94,12 @@
 
         <!-- Navigation -->
         <nav id = "nav" class="flex justify-center mb-10 sticky top-4 z-50">
-            <div class="glass-nav flex flex-wrap justify-center gap-2 p-2 shadow-lg bg-white/80">
+            <div class="glass-nav flex flex-wrap justify-center gap-1 md:gap-2 p-2 shadow-lg bg-white/80">
                 <button onclick="switchTab('front-page', 'front')" class="tab-btn active px-5 py-2 rounded-full text-xs font-black transition-all bg-black text-white" id="btn-front">FRONT PAGE</button>
-                <button onclick="switchTab('front-page', 'tech')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-tech">TECH PORTFOLIO</button>
+                <button onclick="switchTab('front-page', 'tech')" class="hidden md:block tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-tech">TECH PORTFOLIO</button>
                 <button onclick="switchTab('lit-page')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-lit">LITERARY WORKS</button>
                 <button onclick="switchTab('about')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-about">BIOGRAPHY</button>
-                <button onclick="switchTab('about', 'contact')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-contact">CONTACT ME</button>
+                <button onclick="switchTab('about', 'contact')" class="hidden md:block tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-contact">CONTACT ME</button>
             </div>
         </nav>
 
@@ -393,11 +397,21 @@
                         <h3 class="headline text-2xl md:text-5xl font-black mb-4">Moon of Yesterday</h3>
                         <p class="text-xl italic mb-4">"Time can shatter people's reality, and people can shatter reality for time."</p>
                         <p class="text-lg mb-6 leading-relaxed">My debut novel is a contemporary soft sci-fi exploration of memory, time, and the weight of grief. Published globally via Notion Press, it follows Lyra on a journey as she slips through the cracks of time and learns to let go, confronting a haunting truth: some scars shape who we become, and healing them may come at the cost of everything that made us human.</p>
-                        <a href="https://www.amazon.in/dp/B0GTPS5BLY" target="_blank" rel="noopener noreferrer" class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block">View on Amazon</a>
-                        <a href="https://www.goodreads.com/book/show/250377114-moon-of-yesterday" target="_blank" rel="noopener noreferrer" class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block">Find on Goodreads</a>
+                        <div class="flex flex-col sm:flex-row gap-3 items-end sm:justify-end">
+                            <a href="https://www.amazon.in/dp/B0GTPS5BLY" target="_blank" rel="noopener noreferrer"
+                            class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block text-center">
+                                View on Amazon
+                            </a>
+
+                            <a href="https://www.goodreads.com/book/show/250377114-moon-of-yesterday" target="_blank" rel="noopener noreferrer"
+                            class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block text-center">
+                                Find on Goodreads
+                            </a>
+                        </div>
                     </div>
+                    
                     <div class="md:col-span-1 border-4 border-black p-1 shadow-lg bg-white order-1 md:order-2">
-                        <img src="assets/MoY_cover.jpg" loading="lazy" class="w-full object-cover" alt="Moon of Yesterday">
+                        <img src="assets/MoY_cover.jpg" loading="lazy" class="w-full object-cover" alt="Cover of the novel Moon of Yesterday">
                     </div>
                 </div>
 
@@ -481,7 +495,7 @@
                                 name="name"
                                 placeholder="YOUR FULL NAME"
                                 required
-                                class="w-full border-2 border-black bg-transparent px-4 py-3 text-sm font-bold uppercase tracking-wide outline-none focus:bg-black focus:text-white transition-colors"
+                                class="w-full border-2 border-black bg-transparent px-4 py-3 text-sm font-bold tracking-wide outline-none"
                             >
                         </div>
 
@@ -500,7 +514,7 @@
                                 name="email"
                                 placeholder="YOUR@EMAIL.COM"
                                 required
-                                class="w-full border-2 border-black bg-transparent px-4 py-3 text-sm font-bold uppercase tracking-wide outline-none focus:bg-black focus:text-white transition-colors"
+                                class="w-full border-2 border-black bg-transparent px-4 py-3 text-sm font-bold tracking-wide outline-none"
                             >
                         </div>
 
@@ -516,7 +530,7 @@
                                 rows="6"
                                 placeholder="WHAT WOULD YOU LIKE TO DISCUSS?"
                                 required
-                                class="w-full border-2 border-black bg-transparent px-4 py-3 text-sm leading-relaxed uppercase tracking-wide outline-none resize-none focus:bg-black focus:text-white transition-colors"
+                                class="w-full border-2 border-black bg-transparent px-4 py-3 text-sm font-bold leading-relaxed tracking-wide outline-none resize-none"
                             ></textarea>
                         </div>
 
