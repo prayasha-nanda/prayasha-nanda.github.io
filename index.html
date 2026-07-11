@@ -1,802 +1,1516 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Prayasha Nanda — AI/ML Engineer, Researcher, and Author.">
-    <meta property="og:title" content="Prayasha Nanda | Tech & Tales">
-    <meta property="og:description" content="AI/ML Engineer, Researcher, and Developer Portfolio">
-    <meta property="og:type" content="website">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Prayasha Nanda — AI/ML Engineer, Researcher, and Author."
+    />
+    <meta property="og:title" content="Prayasha Nanda | Tech & Tales" />
+    <meta
+      property="og:description"
+      content="AI/ML Engineer, Researcher, and Developer Portfolio"
+    />
+    <meta property="og:type" content="website" />
     <title>Prayasha Nanda | Tech & Tales</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <style>
-        :root { --paper: #f9f7f2; --ink: #1a1a1a; --accent: #bc382e; }
-        .text-accent { color: var(--accent); }
-        body { background-color: #d1d1d1; font-family: 'Crimson Pro', serif; color: var(--ink); scroll-behavior: smooth; }
-        .paper-grain { background-color: var(--paper); background-image: url("https://www.transparenttextures.com/patterns/felt.png"); box-shadow: 0 0 50px rgba(0,0,0,0.2); }
-        .masthead { border-bottom: 5px double var(--ink); font-family: 'Playfair Display', serif; }
-        .headline { font-family: 'Playfair Display', serif; line-height: 1.1; transition: color 0.3s ease; }
-        .headline:hover { color: var(--accent); }
-        .glass-nav { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(0,0,0,0.1); border-radius: 50px; }
-        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-        .ticker-wrap { overflow: hidden; background: var(--ink); color: var(--paper); font-family: 'Inter', sans-serif; font-weight: 800; text-transform: uppercase; font-size: 0.75rem; }
-        .ticker-content { display: inline-block; white-space: nowrap; animation: ticker 25s linear infinite; will-change: transform; }
-        .dropcap::first-letter { float: left; font-size: 3.5rem; line-height: 0.8; padding-right: 8px; font-weight: 900; font-family: 'Playfair Display', serif; color: var(--ink); }
-        
-        .page-container { display: none; }
-        .page-container.active { display: block; animation: fadeIn 0.4s ease-in; }
-        
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .tldr-strip { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); background: #fffcf5; }
-        /* .project-label { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.65rem; text-transform: uppercase; color: var(--accent); display: block; margin-top: 0.5rem; } */
-        
-        .section-divider { border-top: 4px double var(--ink); margin-top: 4rem; padding-top: 4rem; }
-        
-        /* New Typography for Section Headers */
-        .section-header { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; border-bottom: 2px solid var(--ink); padding-bottom: 0.5rem; margin-bottom: 2rem; }
-        
-        @media (max-width: 767px) {
-            #nav-content {
-                position: absolute;
-                top: calc(100% + 10px);
-                left: 50%;
-                transform: translateX(-50%) translateY(-6px);
-
-                width: 90%;
-                max-width: 420px;
-
-                flex-direction: column;
-                background: rgba(255, 255, 255, 0.75);
-                backdrop-filter: blur(12px);
-
-                padding: 1rem;
-                border-radius: 16px;
-
-                opacity: 0;
-                pointer-events: none;
-                transition: all 0.25s ease;
-                z-index: 60;
-            }
-            #nav-content.mobile-open {
-                opacity: 1;
-                transform: translateX(-50%) translateY(0);
-                pointer-events: auto;
-            }
+      :root {
+        --paper: #f9f7f2;
+        --ink: #1a1a1a;
+        --accent: #bc382e;
+      }
+      .text-accent {
+        color: var(--accent);
+      }
+      body {
+        background-color: #d1d1d1;
+        font-family: "Crimson Pro", serif;
+        color: var(--ink);
+        scroll-behavior: smooth;
+      }
+      .paper-grain {
+        background-color: var(--paper);
+        background-image: url("https://www.transparenttextures.com/patterns/felt.png");
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+      }
+      .masthead {
+        border-bottom: 5px double var(--ink);
+        font-family: "Playfair Display", serif;
+      }
+      .headline {
+        font-family: "Playfair Display", serif;
+        line-height: 1.1;
+        transition: color 0.3s ease;
+      }
+      .headline:hover {
+        color: var(--accent);
+      }
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50px;
+      }
+      @keyframes ticker {
+        0% {
+          transform: translateX(100%);
         }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .ticker-wrap {
+        overflow: hidden;
+        background: var(--ink);
+        color: var(--paper);
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+      }
+      .ticker-content {
+        display: inline-block;
+        white-space: nowrap;
+        animation: ticker 25s linear infinite;
+        will-change: transform;
+      }
+      .dropcap::first-letter {
+        float: left;
+        font-size: 3.5rem;
+        line-height: 0.8;
+        padding-right: 8px;
+        font-weight: 900;
+        font-family: "Playfair Display", serif;
+        color: var(--ink);
+      }
 
+      .page-container {
+        display: none;
+      }
+      .page-container.active {
+        display: block;
+        animation: fadeIn 0.4s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .tldr-strip {
+        border-top: 2px solid var(--ink);
+        border-bottom: 2px solid var(--ink);
+        background: #fffcf5;
+      }
+      /* .project-label { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.65rem; text-transform: uppercase; color: var(--accent); display: block; margin-top: 0.5rem; } */
+
+      .section-divider {
+        border-top: 4px double var(--ink);
+        margin-top: 4rem;
+        padding-top: 4rem;
+      }
+
+      .section-header {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 0.5rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: 767px) {
+        #nav-content {
+          position: absolute;
+          top: calc(100% + 10px);
+          left: 50%;
+          transform: translateX(-50%) translateY(-6px);
+
+          width: 90%;
+          max-width: 420px;
+
+          flex-direction: column;
+          background: rgba(255, 255, 255, 0.75);
+          backdrop-filter: blur(12px);
+
+          padding: 1rem;
+          border-radius: 16px;
+
+          opacity: 0;
+          pointer-events: none;
+          transition: all 0.25s ease;
+          z-index: 60;
+        }
+        #nav-content.mobile-open {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+          pointer-events: auto;
+        }
+      }
     </style>
-</head>
-<body class="p-2 md:p-8">
+  </head>
+  <body class="p-2 md:p-8">
+    <div
+      class="max-w-6xl mx-auto paper-grain p-4 md:p-10 px-3 md:px-10 min-h-screen relative shadow-2xl"
+    >
+      <!-- Top Metadata -->
+      <div
+        class="flex justify-between items-center border-b border-black pb-2 mb-4 text-[10px] md:text-xs font-bold uppercase tracking-widest"
+      >
+        <div>VOL. XIII ... NO. 2026</div>
+        <div id="datetime" class="hidden md:block"></div>
+        <a
+          href="https://drive.google.com/file/d/1clyArObIwDhauhCBOJNdl0ubYIb3FdO5/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-accent underline decoration-2 transition-all"
+        >
+          <i class="fa-solid fa-file-lines mr-1"></i> RESUME.PDF
+        </a>
+      </div>
 
-    <div class="max-w-6xl mx-auto paper-grain p-4 md:p-10 px-3 md:px-10 min-h-screen relative shadow-2xl">
-        
-        <!-- Top Metadata -->
-        <div class="flex justify-between items-center border-b border-black pb-2 mb-4 text-[10px] md:text-xs font-bold uppercase tracking-widest">
-            <div>VOL. XIII ... NO. 2026</div>
-            <div id="datetime" class="hidden md:block"></div>
-            <a href="https://drive.google.com/file/d/1clyArObIwDhauhCBOJNdl0ubYIb3FdO5/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="hover:text-accent underline decoration-2 transition-all">
-                <i class="fa-solid fa-file-lines mr-1"></i> RESUME.PDF
+      <!-- Masthead -->
+      <header class="masthead text-center pb-6 mb-4">
+        <h1 class="text-3xl md:text-8xl font-black mb-2 tracking-tighter">
+          PRAYASHA NANDA
+        </h1>
+        <div
+          class="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6 text-sm font-bold border-t border-black pt-4"
+        >
+          <span class="uppercase tracking-widest text-base"
+            >AI / Machine Learning Engineer</span
+          >
+          <span class="hidden md:block">•</span>
+          <span class="uppercase tracking-widest text-base">Researcher</span>
+          <span class="hidden md:block">•</span>
+          <span class="uppercase tracking-widest text-base">Author</span>
+        </div>
+      </header>
+
+      <!-- TL;DR Strip -->
+      <div
+        class="tldr-strip py-3 px-4 mb-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center border-b-2 border-black"
+      >
+        <div class="border-r border-black/20">
+          <div class="text-[10px] uppercase font-bold opacity-60">Field</div>
+          <div class="text-sm font-black uppercase">CSE AI/ML Engineering</div>
+        </div>
+        <div class="md:border-r border-black/20">
+          <div class="text-[10px] uppercase font-bold opacity-60">
+            Coding Profile
+          </div>
+          <div class="text-sm font-black uppercase">800+ LeetCode Solved</div>
+        </div>
+        <div class="border-r border-black/20">
+          <div class="text-[10px] uppercase font-bold opacity-60">
+            Latest Experience
+          </div>
+          <div class="text-sm font-black uppercase">Software Intern</div>
+        </div>
+        <div>
+          <div class="text-[10px] uppercase font-bold opacity-60">Status</div>
+          <div class="text-sm font-black uppercase text-accent">
+            Open to Internships & Placements
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticker -->
+      <div class="ticker-wrap py-1.5 mb-8">
+        <div class="ticker-content">
+          LATEST: SOFTWARE INTERN AT PARAS ANTI-DRONE • GSSOC CONTRIBUTOR • 800+
+          DSA PROBLEMS SOLVED • CLUB PRESIDENT • PUBLISHED IN TAYLOR & FRANCIS •
+        </div>
+      </div>
+
+      <!-- Mobile Toggle Button -->
+      <button
+        id="nav-toggle"
+        class="md:hidden glass-nav flex items-center gap-3 px-4 py-2 shadow-lg bg-white/80 font-black text-xs uppercase tracking-widest border border-black/10"
+      >
+        <i class="fa-solid fa-bars" id="nav-icon"></i>
+        <span>Menu</span>
+      </button>
+
+      <!-- Navigation -->
+      <nav id="nav" class="flex justify-center mb-10 sticky top-4 z-50">
+        <div
+          id="nav-content"
+          class="glass-nav flex gap-2 p-2 shadow-lg bg-white/80 overflow-x-auto whitespace-nowrap no-scrollbar md:flex"
+        >
+          <button
+            onclick="switchTab('front-page', 'front')"
+            class="tab-btn active px-3 md:px-5 py-2 rounded-full text-xs font-black transition-all bg-black text-white"
+            id="btn-front"
+          >
+            FRONT PAGE
+          </button>
+          <button
+            onclick="switchTab('front-page', 'tech')"
+            class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all"
+            id="btn-tech"
+          >
+            TECH PORTFOLIO
+          </button>
+          <button
+            onclick="switchTab('lit-page')"
+            class="tab-btn px-3 md:px-5 py-2 rounded-full text-xs font-black transition-all"
+            id="btn-lit"
+          >
+            LITERARY WORKS
+          </button>
+          <button
+            onclick="switchTab('about-page')"
+            class="tab-btn px-3 md:px-5 py-2 rounded-full text-xs font-black transition-all"
+            id="btn-about"
+          >
+            BIOGRAPHY
+          </button>
+          <button
+            onclick="switchTab('about-page', 'contact')"
+            class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all"
+            id="btn-contact"
+          >
+            CONTACT ME
+          </button>
+        </div>
+      </nav>
+
+      <!-- MAIN NEWSPAPER CONTAINER -->
+      <div id="front-page" class="page-container active">
+        <!-- FRONT PAGE CONTENT -->
+        <main id="front" class="observe-section mb-20">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div
+              class="md:col-span-8 border-r-0 md:border-r border-black/10 pr-0 md:pr-8"
+            >
+              <span
+                class="text-accent font-bold uppercase text-[10px] mb-1 block tracking-widest"
+                >Lead Editorial</span
+              >
+              <h2 class="headline text-2xl md:text-5xl font-black mb-4">
+                Software Engineering Intern at
+                <span class="text-blue-900">Paras Anti-Drone</span>
+              </h2>
+
+              <div
+                class="w-full md:w-48 md:h-48 mb-4 md:mb-0 md:float-left md:mr-5 border border-black p-1 shadow-md bg-black"
+              >
+                <img
+                  src="assets/Prayasha_Paras.jpeg"
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                  alt="Intership at Paras Anti-Drone"
+                />
+              </div>
+
+              <div>
+                <p class="dropcap mb-4 text-justify text-sm leading-relaxed">
+                  During my internship, I worked on software for communication
+                  and radio systems, spanning desktop applications, Android
+                  development, and hardware integration.
+                </p>
+
+                <p class="text-sm text-justify leading-relaxed">
+                  My work included automating electronic test equipment using
+                  PyVISA and SCPI commands, developing dispatcher and radio
+                  communication applications, and building Android tools that
+                  communicated with external devices over serial interfaces. I
+                  implemented features such as PDF transmission over serial
+                  links, device detection, validation logic, contact and
+                  scan-list management, themes and state management, and
+                  user-interface modules for customer programming software
+                  (CPS).
+                </p>
+
+                <p class="text-sm text-justify leading-relaxed">
+                  The internship exposed me to real-world software engineering
+                  challenges including communication protocols,
+                  hardware-software integration, application architecture,
+                  debugging complex state-management issues, and designing
+                  scalable user interfaces for production environments.
+                </p>
+              </div>
+              <div class="mt-4 pt-4 border-t border-black/10">
+                <div class="text-[10px] uppercase font-bold text-accent mb-2">
+                  Technologies Used
+                </div>
+                <div
+                  class="flex flex-wrap gap-2 text-[10px] uppercase tracking-wider font-bold"
+                >
+                  <span class="bg-black/5 px-2 py-0.5 border border-black/20"
+                    >Python</span
+                  >
+                  <span class="bg-black/5 px-2 py-0.5 border border-black/20"
+                    >PyQt6</span
+                  >
+                  <span class="bg-black/5 px-2 py-0.5 border border-black/20"
+                    >PyVISA</span
+                  >
+                  <span class="bg-black/5 px-2 py-0.5 border border-black/20"
+                    >SCPI</span
+                  >
+                  <span class="bg-black/5 px-2 py-0.5 border border-black/20"
+                    >Kivy</span
+                  >
+                  <span class="bg-black/5 px-2 py-0.5 border border-black/20"
+                    >Android</span
+                  >
+                  <span class="bg-black/5 px-2 py-0.5 border border-black/20"
+                    >Serial Communication</span
+                  >
+                  <span class="bg-black/5 px-2 py-0.5 border border-black/20"
+                    >USB-to-TTL</span
+                  >
+                  <span class="bg-black/5 px-2 py-0.5 border border-black/20"
+                    >Git</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="md:col-span-4 space-y-6">
+              <div
+                class="border-2 border-black p-4 bg-white/50 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+              >
+                <h3
+                  class="font-black uppercase text-base border-b border-black mb-3 pb-1"
+                >
+                  Core Technology Stack
+                </h3>
+                <div class="space-y-4">
+                  <div>
+                    <span class="text-[15px] font-black uppercase opacity-60"
+                      >Languages & Tools</span
+                    >
+                    <p class="text-sm font-bold leading-tight uppercase">
+                      Python, Java, C, Git
+                    </p>
+                  </div>
+                  <div>
+                    <span class="text-[15px] font-black uppercase opacity-60"
+                      >AIML & Data Science</span
+                    >
+                    <p class="text-sm font-bold leading-tight uppercase">
+                      TensorFlow, Scikit-learn, OpenCV, MediaPipe, Pandas,
+                      NumPy, FAISS, Pydantic
+                    </p>
+                  </div>
+                  <div>
+                    <span class="text-[15px] font-black uppercase opacity-60"
+                      >Web Engineering</span
+                    >
+                    <p class="text-sm font-bold leading-tight uppercase">
+                      FastAPI, PyQt6, Kivy, React, Tailwind CSS
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-black text-white p-4">
+                <h3
+                  class="font-black uppercase text-base mb-2 border-b border-white/20 pb-1"
+                >
+                  Contact
+                </h3>
+                <div class="space-y-2">
+                  <a
+                    href="mailto:prayasha.nanda@gmail.com"
+                    class="block text-sm font-bold underline hover:text-accent"
+                    ><i class="fa-solid fa-envelope mr-2"></i
+                    >prayasha.nanda@gmail.com</a
+                  >
+                  <a
+                    href="https://linkedin.com/in/prayasha-nanda"
+                    class="block text-sm font-bold underline hover:text-accent"
+                    ><i class="fa-brands fa-linkedin-in mr-2"></i
+                    >linkedin.com/in/prayasha-nanda</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!-- TECH PORTFOLIO -->
+        <section id="tech" class="observe-section section-divider">
+          <!-- Leadership / Stats -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 pb-8">
+            <div
+              class="p-4 bg-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+            >
+              <div
+                class="text-[10px] font-black uppercase tracking-[0.25em] text-accent mb-1"
+              >
+                DSA Proficiency
+              </div>
+
+              <h4 class="text-xl font-black leading-none mb-2">TOP 8%</h4>
+
+              <p class="text-xs leading-relaxed">
+                Solved 800+ problems on LeetCode, ranked 56k / 5M+ users by
+                problems solved, with a contest rating of 1780.
+              </p>
+
+              <a
+                href="https://leetcode.com/u/prayasha_nanda/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-[10px] font-black uppercase underline mt-3 inline-block tracking-[0.15em] hover:tracking-[0.25em] transition-all duration-300"
+              >
+                View Profile →
+              </a>
+            </div>
+
+            <div
+              class="p-4 bg-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+            >
+              <div
+                class="text-[10px] font-black uppercase tracking-[0.25em] text-accent mb-1"
+              >
+                Leadership
+              </div>
+
+              <h4 class="text-xl font-black leading-none mb-2">
+                CLUB PRESIDENT
+              </h4>
+
+              <p class="text-xs leading-relaxed">
+                President of Tech Researchers Club (VITC). Managing 60+ members
+                and conducting and coordinating technical research events.
+              </p>
+            </div>
+
+            <div
+              class="p-4 bg-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+            >
+              <div
+                class="text-[10px] font-black uppercase tracking-[0.25em] text-accent mb-1"
+              >
+                Certifications
+              </div>
+
+              <h4 class="text-xl font-black leading-none mb-2">
+                CLOUD & AI CERTIFICATIONS
+              </h4>
+
+              <p class="text-xs leading-relaxed">
+                • Microsoft Azure Fundamentals (AZ-900)<br />
+                • NVIDIA Fundamentals of Deep Learning<br />
+                • AWS Academy Cloud Foundations<br />
+                • CII Applied Machine Learning & AI (NCVET/NSQF Level 4)
+              </p>
+
+              <a
+                href="https://www.linkedin.com/in/prayasha-nanda/details/certifications/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-[10px] font-black uppercase underline mt-3 inline-block tracking-[0.15em] hover:tracking-[0.25em] transition-all duration-300"
+              >
+                View Credentials →
+              </a>
+            </div>
+          </div>
+
+          <h2 class="section-header">Technical Projects</h2>
+          <!-- Projects -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+            <!-- Project 1 -->
+            <div class="border border-black/10 md:p-5">
+              <div
+                class="text-[10px] uppercase tracking-[0.3em] text-accent mb-3"
+              >
+                [01] Generative AI & Retrieval
+              </div>
+
+              <div class="flex justify-between items-start mb-4">
+                <h3
+                  class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none"
+                >
+                  MULTI-DOC<br />RAG
+                </h3>
+
+                <div class="flex gap-3 text-sm mt-1">
+                  <a
+                    href="https://github.com/prayasha-nanda/Multi-Doc-RAG"
+                    aria-label="GitHub Repository"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-accent transition"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a
+                    href="https://multidoc-rag.vercel.app/"
+                    aria-label="Vercel Deployment"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-accent transition"
+                  >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+
+              <p class="text-sm leading-relaxed mb-5">
+                Chat with multiple PDFs using AI-powered semantic search.
+                Documents are indexed with vector embeddings and FAISS, enabling
+                the system to retrieve relevant content and generate grounded
+                answers with source references, improving both accuracy and
+                transparency.
+              </p>
+
+              <div
+                class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest"
+              >
+                <span class="border border-black px-2 py-1">FastAPI</span>
+                <span class="border border-black px-2 py-1">FAISS</span>
+                <span class="border border-black px-2 py-1"
+                  >Gemini 2.5 Flash</span
+                >
+                <span class="border border-black px-2 py-1">PyPDF</span>
+                <span class="border border-black px-2 py-1">PDF.js</span>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="border border-black/10 md:p-5">
+              <div
+                class="text-[10px] uppercase tracking-[0.3em] text-accent mb-3"
+              >
+                [02] NLP & Graph Representation
+              </div>
+
+              <div class="flex justify-between items-start mb-4">
+                <h3
+                  class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none"
+                >
+                  SEMANTIC CONCEPT<br />GRAPH
+                </h3>
+
+                <div class="flex gap-3 text-sm mt-1">
+                  <a
+                    href="https://github.com/prayasha-nanda/semantic-concept-graph"
+                    aria-label="GitHub Repository"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-accent transition"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                  <a
+                    href="https://semantic-graph-generator.vercel.app/"
+                    aria-label="Vercel Deployment"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-accent transition"
+                  >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+
+              <p class="text-sm leading-relaxed mb-5">
+                Transform documents into interactive knowledge maps. This
+                project extracts concepts from text and visualizes their
+                semantic relationships as a graph, allowing users to discover
+                connections between ideas, while also helping users who learn
+                visually.
+              </p>
+
+              <div
+                class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest"
+              >
+                <span class="border border-black px-2 py-1">Pydantic</span>
+                <span class="border border-black px-2 py-1">PyVis</span>
+                <span class="border border-black px-2 py-1">NetworkX</span>
+                <span class="border border-black px-2 py-1"
+                  >Gemini 2.5 Flash</span
+                >
+                <span class="border border-black px-2 py-1">Matplotlib</span>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="border border-black/10 md:p-5">
+              <div
+                class="text-[10px] uppercase tracking-[0.3em] text-accent mb-3"
+              >
+                [03] Computer Vision
+              </div>
+
+              <div class="flex justify-between items-start mb-4">
+                <h3
+                  class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none"
+                >
+                  ASL TO HINDI<br />TRANSLATOR
+                </h3>
+
+                <div class="flex gap-3 text-sm mt-1">
+                  <a
+                    href="https://github.com/prayasha-nanda/ASL_Hindi_Translator"
+                    aria-label="GitHub Repository"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-accent transition"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+
+              <p class="text-sm leading-relaxed mb-5">
+                Real-time sign language translation system converting ASL
+                gestures into spoken Hindi using computer vision and temporal
+                smoothing.
+              </p>
+
+              <div
+                class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest"
+              >
+                <span class="border border-black px-2 py-1">TensorFlow</span>
+                <span class="border border-black px-2 py-1">MediaPipe</span>
+                <span class="border border-black px-2 py-1">gTTS</span>
+              </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="border border-black/10 md:p-5">
+              <div
+                class="text-[10px] uppercase tracking-[0.3em] text-accent mb-3"
+              >
+                [04] Algorithms
+              </div>
+
+              <div class="flex justify-between items-start mb-4">
+                <h3
+                  class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none"
+                >
+                  CRIMSON<br />PATHFINDER
+                </h3>
+
+                <div class="flex gap-3 text-sm mt-1">
+                  <a
+                    href="https://github.com/prayasha-nanda/CrimsonPathfinder3D"
+                    aria-label="GitHub Repository"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-accent transition"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+
+                  <a
+                    href="https://crimson-pathfinder.vercel.app/"
+                    aria-label="Vercel Deployment"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-accent transition"
+                  >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+
+              <p class="text-sm leading-relaxed mb-5">
+                Interactive 2D and 3D pathfinding visualizer designed to explore
+                maze generation and algorithmic behaviour in real time.
+              </p>
+
+              <div
+                class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest"
+              >
+                <span class="border border-black px-2 py-1">React</span>
+                <span class="border border-black px-2 py-1">Three.js</span>
+                <span class="border border-black px-2 py-1">A* Algorithm</span>
+              </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="border border-black/10 md:p-5">
+              <div
+                class="text-[10px] uppercase tracking-[0.3em] text-accent mb-3"
+              >
+                [05] NLP Tools
+              </div>
+
+              <div class="flex justify-between items-start mb-4">
+                <h3
+                  class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none"
+                >
+                  NLP TIMELINE<br />ANALYSIS
+                </h3>
+
+                <div class="flex gap-3 text-sm mt-1">
+                  <i class="fa-solid fa-lock text-black/30"></i>
+                </div>
+              </div>
+
+              <p class="text-sm leading-relaxed mb-5">
+                Narrative timeline analysis tool for long-form manuscripts,
+                designed to detect temporal inconsistencies across 60k+ word
+                drafts.
+              </p>
+
+              <div
+                class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest"
+              >
+                <span class="border border-black px-2 py-1">spaCy</span>
+                <span class="border border-black px-2 py-1">Regex</span>
+                <span class="border border-black px-2 py-1">Apps Script</span>
+              </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="border border-black/10 md:p-5">
+              <div
+                class="text-[10px] uppercase tracking-[0.3em] text-accent mb-3"
+              >
+                [06] Community Platforms
+              </div>
+
+              <div class="flex justify-between items-start mb-4">
+                <h3
+                  class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none"
+                >
+                  MESSAGE IN<br />A BOTTLE
+                </h3>
+
+                <div class="flex gap-3 text-sm mt-1">
+                  <a
+                    href="https://github.com/prayasha-nanda/message-in-a-bottle"
+                    aria-label="GitHub Repository"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-accent transition"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
+              </div>
+
+              <p class="text-sm leading-relaxed mb-5">
+                Anonymous interaction platform built around random message
+                discovery and low-barrier digital communication.
+              </p>
+
+              <div
+                class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest"
+              >
+                <span class="border border-black px-2 py-1">Tailwind CSS</span>
+                <span class="border border-black px-2 py-1">Full Stack</span>
+                <span class="border border-black px-2 py-1">SQLite</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- OPEN SOURCE CONTRIBUTIONS (GSSoC) -->
+          <div
+            id="gssoc-section"
+            class="border-2 border-black p-6 bg-[#fffcf5] mb-16 mt-16 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+          >
+            <div class="text-center border-b border-black/30 pb-4 mb-6">
+              <span
+                class="text-accent text-xs font-black tracking-[0.3em] uppercase block mb-1"
+                >CORRESPONDENCE LOG</span
+              >
+              <h3
+                class="font-black text-2xl md:text-4xl uppercase tracking-tighter"
+              >
+                GirlScript Summer of Code (GSSoC)
+              </h3>
+              <p class="text-sm italic font-semibold text-black/70">
+                System components built for high-scale environments, for the
+                benefit of all. Open source.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Repository 1: Execra -->
+              <div class="space-y-4">
+                <div
+                  class="flex items-center justify-between border-b border-black pb-2"
+                >
+                  <h4 class="font-black text-xl text-accent uppercase">
+                    1. EXECRA (AI Intelligence Layer)
+                  </h4>
+                  <span
+                    class="text-[10px] bg-black text-white px-2 py-0.5 uppercase font-bold"
+                    >Multimodal AI</span
+                  >
+                </div>
+                <p class="text-sm leading-relaxed text-justify">
+                  Execra is a real-time multimodal background intelligence layer
+                  that monitors digital and camera interactions, guiding the
+                  user to avoid errors before they happen.
+                </p>
+                <div class="bg-white/80 p-3 border border-black/10 rounded">
+                  <h5 class="text-xs font-black uppercase mb-1 text-black">
+                    <i class="fa-solid fa-code-branch mr-1 text-accent"></i>
+                    Core Contribution: Perception Engine
+                  </h5>
+                  <p class="text-xs text-black/80 leading-relaxed mb-2">
+                    Implemented the fundamental ScreenCapture engine inside
+                    <code class="bg-black/5 px-1 py-0.5 text-xs text-accent"
+                      >core/perception/screen_capture.py</code
+                    >.
+                  </p>
+                  <ul class="text-xs space-y-1 text-black/70 list-disc pl-4">
+                    <li>
+                      Continuous screen capture loop using
+                      <code class="text-black font-semibold">mss</code> on
+                      dedicated background threads.
+                    </li>
+                    <li>
+                      Thread-safe async frame queuing using
+                      <code class="text-black font-semibold">asyncio.Queue</code
+                      >.
+                    </li>
+                    <li>
+                      Mocked unit tests for FPS assertions, BGRA-to-RGB
+                      formatting, and display-free shutdowns.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Repository 2: BizInsight-AI -->
+              <div class="space-y-4">
+                <div
+                  class="flex items-center justify-between border-b border-black pb-2"
+                >
+                  <h4 class="font-black text-xl text-accent uppercase">
+                    2. BIZINSIGHT-AI (Feedback Analytics)
+                  </h4>
+                  <span
+                    class="text-[10px] bg-black text-white px-2 py-0.5 uppercase font-bold"
+                    >NLP & BI Dashboard</span
+                  >
+                </div>
+                <p class="text-sm leading-relaxed text-justify">
+                  A customer feedback analytics system combining Streamlit,
+                  VADER, BERTopic, LangChain, ChromaDB, and FastAPI to construct
+                  business dashboards.
+                </p>
+
+                <div
+                  class="bg-white/80 p-3 border border-black/10 rounded space-y-2"
+                >
+                  <h5 class="text-xs font-black uppercase mb-1 text-black">
+                    <i class="fa-solid fa-code-branch mr-1 text-accent"></i>
+                    Core Contributions
+                  </h5>
+
+                  <div class="text-xs border-b border-black/5 pb-2">
+                    <span class="font-bold text-accent">
+                      Robust CSV Ingestion Pipeline
+                    </span>
+                    <p class="text-[11px] text-black/70">
+                      Improved dataset loading reliability by implementing
+                      automatic encoding detection and fallback mechanisms for
+                      diverse CSV formats.
+                    </p>
+                  </div>
+
+                  <div class="text-xs border-b border-black/5 pb-2">
+                    <span class="font-bold text-accent">
+                      Authentication Validation Layer
+                    </span>
+                    <p class="text-[11px] text-black/70">
+                      Developed password-strength validation rules enforcing
+                      entropy, complexity requirements, and secure signup
+                      practices.
+                    </p>
+                  </div>
+
+                  <div class="text-xs border-b border-black/5 pb-2">
+                    <span class="font-bold text-accent">
+                      Sentiment-Aware Analytics Engine
+                    </span>
+                    <p class="text-[11px] text-black/70">
+                      Added sentiment-filtered keyword analytics, introduced
+                      neutral sentiment classification, and improved stability
+                      for edge cases involving empty datasets.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Github Link -->
+          <div class="mt-10 text-center">
+            <a
+              href="https://github.com/prayasha-nanda"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 text-l uppercase tracking-[0.3em] opacity-80 hover:opacity-100 hover:tracking-[0.4em] hover:underline transition-all duration-300"
+            >
+              <span>See More on GitHub</span>
             </a>
-        </div>
-
-        <!-- Masthead -->
-        <header class="masthead text-center pb-6 mb-4">
-            <h1 class="text-3xl md:text-8xl font-black mb-2 tracking-tighter">PRAYASHA NANDA</h1>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6 text-sm font-bold border-t border-black pt-4">
-                <span class="uppercase tracking-widest text-base">AI / Machine Learning Engineer</span>
-                <span class="hidden md:block">•</span>
-                <span class="uppercase tracking-widest text-base">Researcher</span>
-                <span class="hidden md:block">•</span>
-                <span class="uppercase tracking-widest text-base">Author</span>
-            </div>
-        </header>
-
-        <!-- TL;DR Strip -->
-        <div class="tldr-strip py-3 px-4 mb-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center border-b-2 border-black">
-            <div class="border-r border-black/20">
-                <div class="text-[10px] uppercase font-bold opacity-60">Field</div>
-                <div class="text-sm font-black uppercase">CSE AI/ML Engineering</div>
-            </div>
-            <div class="md:border-r border-black/20">
-                <div class="text-[10px] uppercase font-bold opacity-60">Coding Profile</div>
-                <div class="text-sm font-black uppercase">750+ LeetCode Solved</div>
-            </div>
-            <div class="border-r border-black/20">
-                <div class="text-[10px] uppercase font-bold opacity-60">Experience</div>
-                <div class="text-sm font-black uppercase">AI Research Intern</div>
-            </div>
-            <div>
-                <div class="text-[10px] uppercase font-bold opacity-60">Status</div>
-                <div class="text-sm font-black uppercase text-accent">Open to Internships & Placements</div>
-            </div>
-        </div>
-
-        <!-- Ticker -->
-        <div class="ticker-wrap py-1.5 mb-8">
-            <div class="ticker-content">
-                LATEST: SUPERNOVA COSMOLOGY MODEL  •  ASL-TO-HINDI TRANSLATOR  •  750+ DSA PROBLEMS SOLVED  •  CLUB SECRETARY  •  PUBLISHED IN TAYLOR & FRANCIS  •  PYTHON PROFICIENCY  • 
-            </div>
-        </div>
-
-
-        <!-- Mobile Toggle Button -->
-        <button id="nav-toggle" class="md:hidden glass-nav flex items-center gap-3 px-4 py-2 shadow-lg bg-white/80 font-black text-xs uppercase tracking-widest border border-black/10">
-            <i class="fa-solid fa-bars" id="nav-icon"></i>
-            <span>Menu</span>
-        </button>
-
-        <!-- Navigation -->
-        <nav id="nav" class="flex justify-center mb-10 sticky top-4 z-50">
-            <div id="nav-content" class="glass-nav flex gap-2 p-2 shadow-lg bg-white/80 overflow-x-auto whitespace-nowrap no-scrollbar md:flex">
-                <button onclick="switchTab('front-page', 'front')" class="tab-btn active px-3 md:px-5 py-2 rounded-full text-xs font-black transition-all bg-black text-white" id="btn-front">FRONT PAGE</button>
-                <button onclick="switchTab('front-page', 'tech')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-tech">TECH PORTFOLIO</button>
-                <button onclick="switchTab('lit-page')" class="tab-btn px-3 md:px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-lit">LITERARY WORKS</button>
-                <button onclick="switchTab('about-page')" class="tab-btn px-3 md:px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-about">BIOGRAPHY</button>
-                <button onclick="switchTab('about-page', 'contact')" class="tab-btn px-5 py-2 rounded-full text-xs font-black transition-all" id="btn-contact">CONTACT ME</button>
-            </div>
-        </nav>
-
-        <!-- MAIN NEWSPAPER CONTAINER -->
-        <div id="front-page" class="page-container active">
-            
-            <!-- FRONT PAGE CONTENT -->
-            <main id="front" class="observe-section mb-20">
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-                    <div class="md:col-span-8 border-r-0 md:border-r border-black/10 pr-0 md:pr-8">
-                        <span class="text-accent font-bold uppercase text-[10px] mb-1 block tracking-widest">Lead Editorial</span>
-                        <h2 class="headline text-2xl md:text-5xl font-black mb-4"> Data-Driven Astronomy Research Intern at <span class="text-blue-900">Indian Space Academy</span></h2>
-                        
-                        <div class="w-full md:w-48 md:h-48 mb-4 md:mb-0 md:float-left md:mr-5 border border-black p-1 shadow-md bg-black">
-                            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&q=80&w=1200" loading="lazy" class="w-full h-full object-cover grayscale opacity-70" alt="Space Research">
-                        </div>
-
-                        <div>
-                            <p class="dropcap mb-4 text-justify text-sm leading-relaxed">During my internship at the Indian Space Academy, I completed 120 hours of training in the Astronomy and Astrophysics Summer School 2025, focusing on data-driven approaches to modern cosmology. As part of my project work on Supernova Cosmology, I built a Lambda-CDM computational model using Type Ia supernovae data to estimate the Hubble constant and analyze the expansion history of the Universe, aligning results with late-universe (SH0ES) measurements.</p>
-                            <p class="text-sm text-justify leading-relaxed">The work involved developing and testing numerical pipelines in Python using tools such as NumPy, pandas, SciPy, Matplotlib, and Astropy, strengthening my understanding of how theoretical cosmology can be translated into computational models driven by real observational data.</p>
-                        </div>
-                    </div>
-
-                    <div class="md:col-span-4 space-y-6">
-                        <div class="border-2 border-black p-4 bg-white/50 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                            <h3 class="font-black uppercase text-base border-b border-black mb-3 pb-1">Core Technology Stack</h3>
-                            <div class="space-y-4">
-                                <div>
-                                    <span class="text-[15px] font-black uppercase opacity-60">Languages & Tools</span>
-                                    <p class="text-sm font-bold leading-tight uppercase">Python, Java, C, Git</p>
-                                </div>
-                                <div>
-                                    <span class="text-[15px] font-black uppercase opacity-60">AIML & Data Science</span>
-                                    <p class="text-sm font-bold leading-tight uppercase">TensorFlow, Scikit-learn, OpenCV, MediaPipe, Pandas, NumPy, Astropy</p>
-                                </div>
-                                <div>
-                                    <span class="text-[15px] font-black uppercase opacity-60">Web Engineering</span>
-                                    <p class="text-sm font-bold leading-tight uppercase">React, Next.js, Node.js, Tailwind CSS</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-black text-white p-4">
-                            <h3 class="font-black uppercase text-base mb-2 border-b border-white/20 pb-1">Contact</h3>
-                            <div class="space-y-2">
-                                <a href="mailto:prayasha.nanda@gmail.com" class="block text-sm font-bold underline hover:text-accent"><i class="fa-solid fa-envelope mr-2"></i>prayasha.nanda@gmail.com</a>
-                                <a href="https://linkedin.com/in/prayasha-nanda" class="block text-sm font-bold underline hover:text-accent"><i class="fa-brands fa-linkedin-in mr-2"></i>linkedin.com/in/prayasha-nanda</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-
-            <!-- TECH PORTFOLIO -->
-            <section id="tech" class="observe-section section-divider">
-                <!-- Leadership / Stats -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 pb-8">
-                    
-                    <div class="p-4 bg-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                        <div class="text-[10px] font-black uppercase tracking-[0.25em] text-accent mb-1">
-                            DSA Proficiency
-                        </div>
-
-                        <h4 class="text-xl font-black leading-none mb-2">
-                            TOP 8%
-                        </h4>
-
-                        <p class="text-xs leading-relaxed">
-                            Solved 750+ problems on LeetCode, ranked 65k / 5M+ users by problems solved, with a contest rating of 1780.
-                        </p>
-
-                        <a href="https://leetcode.com/u/prayasha_nanda/" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        class="text-[10px] font-black uppercase underline mt-3 inline-block tracking-[0.15em] hover:tracking-[0.25em] transition-all duration-300">
-                            View Profile →
-                        </a>
-                    </div>
-
-                    <div class="p-4 bg-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                        <div class="text-[10px] font-black uppercase tracking-[0.25em] text-accent mb-1">
-                            Leadership
-                        </div>
-
-                        <h4 class="text-xl font-black leading-none mb-2">
-                            CLUB SECRETARY
-                        </h4>
-
-                        <p class="text-xs leading-relaxed">
-                            Secretary of Tech Researchers Club (VITC). Managing 60+ members and coordinating technical research events.
-                        </p>
-                    </div>
-
-                    <div class="p-4 bg-white border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                        <div class="text-[10px] font-black uppercase tracking-[0.25em] text-accent mb-1">
-                            Certifications
-                        </div>
-
-                        <h4 class="text-xl font-black leading-none mb-2">
-                            CLOUD & AI CERTIFIED
-                        </h4>
-
-                        <p class="text-xs leading-relaxed">
-                            Microsoft Azure Fundamentals (AZ-900), NVIDIA Fundamentals of Deep Learning, AWS Academy Cloud Foundations.
-                        </p>
-
-                        <a href="https://www.linkedin.com/in/prayasha-nanda/details/certifications/" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        class="text-[10px] font-black uppercase underline mt-3 inline-block tracking-[0.15em] hover:tracking-[0.25em] transition-all duration-300">
-                            View Credentials →
-                        </a>
-                    </div>
-                </div>
-                
-                <h2 class="section-header">Technical Projects</h2>
-                <!-- Projects -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
-
-                    <!-- Project 1 -->
-                    <div class="md:border-r border-black/10 md:pr-10">
-                        
-                        <div class="text-[10px] uppercase tracking-[0.3em] text-accent mb-3">
-                            [01] Computer Vision
-                        </div>
-
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none">
-                                ASL TO HINDI<br>TRANSLATOR
-                            </h3>
-
-                            <div class="flex gap-3 text-sm mt-1">
-                                <a href="https://github.com/prayasha-nanda/ASL_Hindi_Translator" 
-                                aria-label="GitHub Repository" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="hover:text-accent transition">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <p class="text-sm leading-relaxed mb-5">
-                            Real-time sign language translation system converting ASL gestures into spoken Hindi using computer vision and temporal smoothing.
-                        </p>
-
-                        <div class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest">
-                            <span class="border border-black px-2 py-1">TensorFlow</span>
-                            <span class="border border-black px-2 py-1">MediaPipe</span>
-                            <span class="border border-black px-2 py-1">gTTS</span>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div>
-
-                        <div class="text-[10px] uppercase tracking-[0.3em] text-accent mb-3">
-                            [02] Algorithms
-                        </div>
-
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none">
-                                CRIMSON<br>PATHFINDER
-                            </h3>
-
-                            <div class="flex gap-3 text-sm mt-1">
-                                <a href="https://github.com/prayasha-nanda/CrimsonPathfinder3D" 
-                                aria-label="GitHub Repository" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="hover:text-accent transition">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-
-                                <a href="https://crimson-pathfinder.vercel.app/" 
-                                aria-label="Vercel Deployment" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="hover:text-accent transition">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <p class="text-sm leading-relaxed mb-5">
-                            Interactive 2D and 3D pathfinding visualizer designed to explore maze generation and algorithmic behaviour in real time.
-                        </p>
-
-                        <div class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest">
-                            <span class="border border-black px-2 py-1">React</span>
-                            <span class="border border-black px-2 py-1">Three.js</span>
-                            <span class="border border-black px-2 py-1">A* Algorithm</span>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="border-t border-black/10 pt-8 md:border-r md:pr-10">
-
-                        <div class="text-[10px] uppercase tracking-[0.3em] text-accent mb-3">
-                            [03] NLP Tools
-                        </div>
-
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none">
-                                NLP TIMELINE<br>ANALYSIS
-                            </h3>
-
-                            <div class="flex gap-3 text-sm mt-1">
-                                <i class="fa-solid fa-lock text-black/30"></i>
-                            </div>
-                        </div>
-
-                        <p class="text-sm leading-relaxed mb-5">
-                            Narrative timeline analysis tool for long-form manuscripts, designed to detect temporal inconsistencies across 60k+ word drafts.
-                        </p>
-
-                        <div class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest">
-                            <span class="border border-black px-2 py-1">spaCy</span>
-                            <span class="border border-black px-2 py-1">Regex</span>
-                            <span class="border border-black px-2 py-1">Apps Script</span>
-                        </div>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="border-t border-black/10 pt-8">
-
-                        <div class="text-[10px] uppercase tracking-[0.3em] text-accent mb-3">
-                            [04] Community Platforms
-                        </div>
-
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none">
-                                MESSAGE IN<br>A BOTTLE
-                            </h3>
-
-                            <div class="flex gap-3 text-sm mt-1">
-                                <a href="https://github.com/prayasha-nanda/message-in-a-bottle" 
-                                aria-label="GitHub Repository" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                class="hover:text-accent transition">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <p class="text-sm leading-relaxed mb-5">
-                            Anonymous interaction platform built around random message discovery and low-barrier digital communication.
-                        </p>
-
-                        <div class="flex flex-wrap gap-2 text-[10px] uppercase tracking-widest">
-                            <span class="border border-black px-2 py-1">Tailwind CSS</span>
-                            <span class="border border-black px-2 py-1">Full Stack</span>
-                            <span class="border border-black px-2 py-1">SQLite</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Github Link -->
-                <div class="mt-10 text-center">
-                    <a href="https://github.com/prayasha-nanda" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 text-xs uppercase tracking-[0.3em] opacity-70 hover:opacity-100 hover:tracking-[0.4em] hover:underline transition-all duration-300">
-                        <span>See More on GitHub</span>
-                    </a>
-                </div>
-            </section>
-        </div>
-
-        <!-- LITERARY SECTION -->
-        <section id="lit-page" class="page-container observe-section">
-            <h2 class="section-header">Academic & Literary Contributions</h2>
-            
-            <div class="space-y-20">
-                <!-- 1. Taylor & Francis (Left Image, Right Text) -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                    <div class="md:col-span-1 border-4 border-black p-1 shadow-lg bg-white">
-                        <div class="aspect-[3/4] bg-neutral-200 flex items-center justify-center contrast-125">
-                            <img src="assets/Research_Pub_bookcover.jpg" class="w-full object-cover" alt="Adopting AI Tools in Higher Education – Student Assessment">
-                        </div>
-                    </div>
-                    <div class="md:col-span-2">
-                        <span class="bg-black text-white px-2 py-0.5 text-[10px] font-bold uppercase mb-2 inline-block">Academic Contribution // July 2025</span>
-                        <h3 class="headline text-2xl md:text-5xl font-black mb-4">Transforming Education Through AI-Powered Personalized Assessment</h3>
-                        <h4 class="text-xl font-black mb-4">Chapter 7, "Adopting AI Tools in Higher Education – Student Assessment"</h4>
-                        <p class="text-xl italic mb-4">Co-authored peer-reviewed research on AI-driven models for the Indian education system. Indexed in Scopus.</p>
-                        <p class="text-lg text-justify mb-6 leading-relaxed">My work in this chapter focused on adapting AI-driven assessment methodologies to the Indian education system. I was challenged to consider the complexities of local contexts, giving me a broader appreciation for the potential and limitations of AI in education.
-                            It was a deep learning process that sharpened my understanding of how AI tools must be contextualized to be effective, equitable, and sustainable.</p>
-                        <a href="https://doi.org/10.1201/9781003470304-7" target="_blank" rel="noopener noreferrer" class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block">View DOI Link</a>
-                    </div>
-                </div>
-
-                <!-- 2. Moon of Yesterday (Right Image, Left Text, Left Aligned) -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                    <div class="md:col-span-2 text-right order-2 md:order-1">
-                        <span class="bg-black text-white px-2 py-0.5 text-[10px] font-bold uppercase mb-2 inline-block">Debut Novel // March 2026</span>
-                        <h3 class="headline text-2xl md:text-5xl font-black mb-4">Moon of Yesterday</h3>
-                        <p class="text-xl italic mb-4">"Time can shatter people's reality, and people can shatter reality for time."</p>
-                        <p class="text-lg mb-6 leading-relaxed">My debut novel is a contemporary soft sci-fi exploration of memory, time, and the weight of grief. Published globally via Notion Press, it follows Lyra on a journey as she slips through the cracks of time and learns to let go, confronting a haunting truth: some scars shape who we become, and healing them may come at the cost of everything that made us human.</p>
-                        <div class="flex flex-col sm:flex-row gap-3 items-end sm:justify-end">
-                            <a href="https://www.amazon.in/dp/B0GTPS5BLY" target="_blank" rel="noopener noreferrer"
-                            class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block text-center">
-                                View on Amazon
-                            </a>
-
-                            <a href="https://www.goodreads.com/book/show/250377114-moon-of-yesterday" target="_blank" rel="noopener noreferrer"
-                            class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block text-center">
-                                Find on Goodreads
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="md:col-span-1 border-4 border-black p-1 shadow-lg bg-white order-1 md:order-2">
-                        <img src="assets/MoY_cover.jpg" loading="lazy" class="w-full object-cover" alt="Cover of the novel Moon of Yesterday">
-                    </div>
-                </div>
-
-                <!-- 3. Short Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t-2 border-black pt-12">
-                    <div class="p-6 border-l-4 border-black bg-white/30">
-                        <div class="text-[10px] font-black uppercase opacity-60 mb-1">August 2025 • Paperoin Publications</div>
-                        <h4 class="text-2xl font-black uppercase tracking-tighter mb-2">Elsewhere in August</h4>
-                        <p class="text-sm leading-relaxed text-justify">Contributor to the poetry anthology <em>Elsewhere in August</em>, featuring my tribute poem to the famous artist <strong>wowaka</strong>, who changed the music industry forever with his high BPM songs and lyrics that did not shy away from the harsh reality, using Vocaloid software.</p>
-                    </div>
-                    <div class="p-6 border-l-4 border-black bg-white/30">
-                        <div class="text-[10px] font-black uppercase opacity-60 mb-1">Present • Medium</div>
-                        <h4 class="text-2xl font-black uppercase tracking-tighter mb-2">Technical Writing</h4>
-                        <p class="text-sm leading-relaxed text-justify">Regular contributor to the official technical blog for my college club, covering topics ranging from <strong>Digital Ownership</strong> to the evolving landscape of <strong>Artificial Intelligence</strong>. I also maintain a presence on my personal Medium.</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </section>
+      </div>
 
-        <!-- BIOGRAPHY -->
-        <section id="about-page" class="page-container observe-section">
-            <h2 class="section-header">About Me</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="md:col-span-1 flex justify-center">
-            <div class="w-full max-w-[320px] aspect-square overflow-hidden rounded-md border-4 border-black shadow-xl">
-                <img src="assets/prayasha_nanda.png" loading="lazy" alt="Prayasha Nanda" class="min-w-full min-h-full object-cover">
+      <!-- LITERARY SECTION -->
+      <section id="lit-page" class="page-container observe-section">
+        <h2 class="section-header">Academic & Literary Contributions</h2>
+
+        <div class="space-y-20">
+          <!-- 1. Taylor & Francis (Left Image, Right Text) -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div
+              class="md:col-span-1 border-4 border-black p-1 shadow-lg bg-white"
+            >
+              <div
+                class="aspect-[3/4] bg-neutral-200 flex items-center justify-center contrast-125"
+              >
+                <img
+                  src="assets/Research_Pub_bookcover.jpg"
+                  class="w-full object-cover"
+                  alt="Adopting AI Tools in Higher Education – Student Assessment"
+                />
+              </div>
+            </div>
+            <div class="md:col-span-2">
+              <span
+                class="bg-black text-white px-2 py-0.5 text-[10px] font-bold uppercase mb-2 inline-block"
+                >Academic Contribution // July 2025</span
+              >
+              <h3 class="headline text-2xl md:text-5xl font-black mb-4">
+                Transforming Education Through AI-Powered Personalized
+                Assessment
+              </h3>
+              <h4 class="text-xl font-black mb-4">
+                Chapter 7, "Adopting AI Tools in Higher Education – Student
+                Assessment"
+              </h4>
+              <p class="text-xl italic mb-4">
+                Co-authored peer-reviewed research on AI-driven models for the
+                Indian education system. Indexed in Scopus.
+              </p>
+              <p class="text-lg text-justify mb-6 leading-relaxed">
+                My work in this chapter focused on adapting AI-driven assessment
+                methodologies to the Indian education system. I was challenged
+                to consider the complexities of local contexts, giving me a
+                broader appreciation for the potential and limitations of AI in
+                education. It was a deep learning process that sharpened my
+                understanding of how AI tools must be contextualized to be
+                effective, equitable, and sustainable.
+              </p>
+              <a
+                href="https://doi.org/10.1201/9781003470304-7"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block"
+                >View DOI Link</a
+              >
+            </div>
+          </div>
+
+          <!-- 2. Moon of Yesterday (Right Image, Left Text, Left Aligned) -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div class="md:col-span-2 text-right order-2 md:order-1">
+              <span
+                class="bg-black text-white px-2 py-0.5 text-[10px] font-bold uppercase mb-2 inline-block"
+                >Debut Novel // March 2026</span
+              >
+              <h3 class="headline text-2xl md:text-5xl font-black mb-4">
+                Moon of Yesterday
+              </h3>
+              <p class="text-xl italic mb-4">
+                "Time can shatter people's reality, and people can shatter
+                reality for time."
+              </p>
+              <p class="text-lg mb-6 leading-relaxed">
+                My debut novel is a contemporary soft sci-fi exploration of
+                memory, time, and the weight of grief. Published globally via
+                Notion Press, it follows Lyra on a journey as she slips through
+                the cracks of time and learns to let go, confronting a haunting
+                truth: some scars shape who we become, and healing them may come
+                at the cost of everything that made us human.
+              </p>
+              <div
+                class="flex flex-col sm:flex-row gap-3 items-end sm:justify-end"
+              >
+                <a
+                  href="https://www.amazon.in/dp/B0GTPS5BLY"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block text-center"
+                >
+                  View on Amazon
+                </a>
+
+                <a
+                  href="https://www.goodreads.com/book/show/250377114-moon-of-yesterday"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="border-2 border-black py-2 px-6 font-bold text-xs uppercase hover:bg-black hover:text-white transition-all inline-block text-center"
+                >
+                  Find on Goodreads
+                </a>
+              </div>
             </div>
 
+            <div
+              class="md:col-span-1 border-4 border-black p-1 shadow-lg bg-white order-1 md:order-2"
+            >
+              <img
+                src="assets/MoY_cover.jpg"
+                loading="lazy"
+                class="w-full object-cover"
+                alt="Cover of the novel Moon of Yesterday"
+              />
             </div>
-                <div class="md:col-span-3">
-                    <p class="headline text-lg mb-4 text-justify font-bold leading-tight">Final year B.Tech AI & ML student at VIT Chennai, with a strong focus on building and understanding data-driven systems.</p>
-                    <p class="text-sm mb-4 text-justify leading-relaxed">My work revolves around areas like natural language processing and computer vision, using tools such as Python and TensorFlow to design and experiment with models that learn patterns in data. I’m interested in how abstract mathematical concepts translate into real-world intelligent behavior.</p>
-                    <p class="text-sm text-justify leading-relaxed">Beyond coursework, I actively contribute to university club activities, collaborating on technical and creative initiatives in team environments.<br>I balance strict logic with creative world-building, using my experience as a published author to communicate complex technical ideas through clear, narrative-driven design.</p>
-                    
-                    <div class="mt-8 pt-6 border-t border-black flex flex-wrap gap-3">
+          </div>
 
-                        <a href="mailto:prayasha.nanda@gmail.com" class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition">
-                            <i class="fa-solid fa-envelope mr-2"></i>Email
-                        </a>
+          <!-- 3. Short Cards -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t-2 border-black pt-12"
+          >
+            <div class="p-6 border-l-4 border-black bg-white/30">
+              <div class="text-[10px] font-black uppercase opacity-60 mb-1">
+                August 2025 • Paperoin Publications
+              </div>
+              <h4 class="text-2xl font-black uppercase tracking-tighter mb-2">
+                Elsewhere in August
+              </h4>
+              <p class="text-sm leading-relaxed text-justify">
+                Contributor to the poetry anthology
+                <em>Elsewhere in August</em>, featuring my tribute poem to the
+                famous artist <strong>wowaka</strong>, who changed the music
+                industry forever with his high BPM songs and lyrics that did not
+                shy away from the harsh reality, using Vocaloid software.
+              </p>
+            </div>
+            <div class="p-6 border-l-4 border-black bg-white/30">
+              <div class="text-[10px] font-black uppercase opacity-60 mb-1">
+                Present • Medium
+              </div>
+              <h4 class="text-2xl font-black uppercase tracking-tighter mb-2">
+                Technical Writing
+              </h4>
+              <p class="text-sm leading-relaxed text-justify">
+                Regular contributor to the official technical blog for my
+                college club, covering topics ranging from
+                <strong>Digital Ownership</strong> to the evolving landscape of
+                <strong>Artificial Intelligence</strong>. I also maintain a
+                presence on my personal Medium.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                        <a href="https://linkedin.com/in/prayasha-nanda" target="_blank" rel="noopener noreferrer" class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition">
-                            <i class="fa-brands fa-linkedin mr-2"></i>LinkedIn
-                        </a>
+      <!-- BIOGRAPHY -->
+      <section id="about-page" class="page-container observe-section">
+        <h2 class="section-header">About Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="md:col-span-1 flex justify-center">
+            <div
+              class="w-full max-w-[320px] aspect-square overflow-hidden rounded-md border-4 border-black shadow-xl"
+            >
+              <img
+                src="assets/prayasha_nanda.png"
+                loading="lazy"
+                alt="Prayasha Nanda"
+                class="min-w-full min-h-full object-cover"
+              />
+            </div>
+          </div>
+          <div class="md:col-span-3">
 
-                        <a href="https://github.com/prayasha-nanda" target="_blank" rel="noopener noreferrer" class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition">
-                            <i class="fa-brands fa-github mr-2"></i>GitHub
-                        </a>
+            <p
+              class="headline text-lg mb-4 text-justify font-bold leading-tight"
+            >
+              Final Year Computer Science (AI&ML) undergraduate at VIT Chennai,
+              passionate about building intelligent systems that solve
+              real-world problems.
+            </p>
 
-                    </div>
-                </div>
+            <p class="text-sm mb-4 text-justify leading-relaxed">
+              My interests span natural language processing, computer vision,
+              retrieval-augmented generation, and trustworthy AI. I enjoy
+              transforming research ideas into practical applications, whether
+              that means developing machine learning models, designing intuitive
+              interfaces, or deploying full-stack AI solutions.
+            </p>
+
+            <p class="text-sm text-justify leading-relaxed">
+              Beyond coursework, I contribute to research, open-source
+              software, and technical communities while serving in student
+              leadership roles. As a published author, I also enjoy blending
+              storytelling with technology, making complex ideas more accessible
+              through thoughtful design and communication.
+            </p>
+
+            <div class="mt-8 pt-6 border-t border-black flex flex-wrap gap-3">
+              <a
+                href="mailto:prayasha.nanda@gmail.com"
+                class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition"
+              >
+                <i class="fa-solid fa-envelope mr-2"></i>Email
+              </a>
+
+              <a
+                href="https://linkedin.com/in/prayasha-nanda"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition"
+              >
+                <i class="fa-brands fa-linkedin mr-2"></i>LinkedIn
+              </a>
+
+              <a
+                href="https://github.com/prayasha-nanda"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-3 py-1 border border-black text-xs font-black uppercase hover:bg-black hover:text-white transition"
+              >
+                <i class="fa-brands fa-github mr-2"></i>GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div id="contact" class="observe-section mt-20">
+          <h3 class="section-header">Contact Me</h3>
+          <div
+            class="max-w-2xl mx-auto border-2 border-black bg-white/70 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
+          >
+            <!-- Header Strip -->
+            <div
+              class="border-b-2 border-black px-4 py-2 flex justify-between items-center bg-black text-white"
+            >
+              <span
+                class="text-[10px] md:text-xs uppercase tracking-[0.25em] font-black"
+              >
+                Editorial Correspondence
+              </span>
+
+              <span class="text-[10px] uppercase opacity-70">
+                Open to Opportunities
+              </span>
             </div>
 
-            <div id="contact" class = "observe-section mt-20">
-                <h3 class="section-header">Contact Me</h3>
-                <div class="max-w-2xl mx-auto border-2 border-black bg-white/70 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+            <!-- Form -->
+            <form id="contact-form" class="p-5 md:p-8 space-y-6">
+              <input
+                type="hidden"
+                name="_next"
+                value="https://prayasha-nanda.github.io"
+              />
 
-                    <!-- Header Strip -->
-                    <div class="border-b-2 border-black px-4 py-2 flex justify-between items-center bg-black text-white">
-                        <span class="text-[10px] md:text-xs uppercase tracking-[0.25em] font-black">
-                            Editorial Correspondence
-                        </span>
+              <!-- Name -->
+              <div>
+                <label
+                  for="name"
+                  class="block text-[11px] font-black uppercase tracking-[0.2em] mb-2"
+                >
+                  Name <span class="text-red-700">*</span>
+                </label>
 
-                        <span class="text-[10px] uppercase opacity-70">
-                            Open to Opportunities
-                        </span>
-                    </div>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="YOUR FULL NAME"
+                  required
+                  class="w-full border-2 border-black bg-transparent px-4 py-3 text-sm font-bold tracking-wide outline-none"
+                />
+              </div>
 
-                    <!-- Form -->
-                    <form id="contact-form" class="p-5 md:p-8 space-y-6">
-                        <input type="hidden" name="_next" value="https://prayasha-nanda.github.io">
+              <!-- Email -->
+              <div>
+                <label
+                  for="email"
+                  class="block text-[11px] font-black uppercase tracking-[0.2em] mb-2"
+                >
+                  Email <span class="text-red-700">*</span>
+                </label>
 
-                        <!-- Name -->
-                        <div>
-                            <label for="name" class="block text-[11px] font-black uppercase tracking-[0.2em] mb-2">
-                                Name <span class="text-red-700">*</span>
-                            </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="YOUR@EMAIL.COM"
+                  required
+                  class="w-full border-2 border-black bg-transparent px-4 py-3 text-sm font-bold tracking-wide outline-none"
+                />
+              </div>
 
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="YOUR FULL NAME"
-                                required
-                                class="w-full border-2 border-black bg-transparent px-4 py-3 text-sm font-bold tracking-wide outline-none"
-                            >
-                        </div>
+              <!-- Message -->
+              <div>
+                <label
+                  for="message"
+                  class="block text-[11px] font-black uppercase tracking-[0.2em] mb-2"
+                >
+                  Message <span class="text-red-700">*</span>
+                </label>
 
-                        <!-- Email -->
-                        <div>
-                            <label 
-                                for="email"
-                                class="block text-[11px] font-black uppercase tracking-[0.2em] mb-2"
-                            >
-                                Email <span class="text-red-700">*</span>
-                            </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="WHAT WOULD YOU LIKE TO DISCUSS?"
+                  required
+                  class="w-full border-2 border-black bg-transparent px-4 py-3 text-sm font-bold leading-relaxed tracking-wide outline-none resize-none"
+                ></textarea>
+              </div>
 
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="YOUR@EMAIL.COM"
-                                required
-                                class="w-full border-2 border-black bg-transparent px-4 py-3 text-sm font-bold tracking-wide outline-none"
-                            >
-                        </div>
+              <!-- Footer -->
+              <div
+                class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-2 border-t border-black"
+              >
+                <p class="text-[10px] uppercase tracking-[0.15em] opacity-60">
+                  Responses typically within 24–48 hours
+                </p>
 
-                        <!-- Message -->
-                        <div>
-                            <label for="message" class="block text-[11px] font-black uppercase tracking-[0.2em] mb-2">
-                                Message <span class="text-red-700">*</span>
-                            </label>
+                <button
+                  type="submit"
+                  class="border-2 border-black bg-black text-white px-6 py-3 text-xs font-black uppercase tracking-[0.25em] hover:bg-white hover:text-black transition-all duration-300"
+                >
+                  Send Message →
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
 
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="6"
-                                placeholder="WHAT WOULD YOU LIKE TO DISCUSS?"
-                                required
-                                class="w-full border-2 border-black bg-transparent px-4 py-3 text-sm font-bold leading-relaxed tracking-wide outline-none resize-none"
-                            ></textarea>
-                        </div>
-
-                        <!-- Footer -->
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-2 border-t border-black">
-
-                            <p class="text-[10px] uppercase tracking-[0.15em] opacity-60">Responses typically within 24–48 hours</p>
-
-                            <button type="submit" class="border-2 border-black bg-black text-white px-6 py-3 text-xs font-black uppercase tracking-[0.25em] hover:bg-white hover:text-black transition-all duration-300">
-                                Send Message →
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="mt-16 border-t border-black pt-8 text-center">
-            <div class="text-[10px] font-black uppercase tracking-widest opacity-60">
-                All rights reserved © 2026 Prayasha Nanda • Printed in the digital realm
-            </div>
-        </footer>
-
+      <!-- Footer -->
+      <footer class="mt-16 border-t border-black pt-8 text-center">
+        <div
+          class="text-[10px] font-black uppercase tracking-widest opacity-60"
+        >
+          All rights reserved © 2026 Prayasha Nanda • Printed in the digital
+          realm
+        </div>
+      </footer>
     </div>
 
     <!-- Floating Resume Button -->
-    <a href="https://drive.google.com/file/d/1clyArObIwDhauhCBOJNdl0ubYIb3FdO5/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open Resume PDF"
-        class="fixed bottom-5 right-5 bg-black text-white px-5 py-3 text-base font-black uppercase shadow-xl hover:bg-red-700 z-[60] transition-colors">
-        Resume
+    <a
+      href="https://drive.google.com/file/d/1clyArObIwDhauhCBOJNdl0ubYIb3FdO5/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open Resume PDF"
+      class="fixed bottom-5 right-5 bg-black text-white px-5 py-3 text-base font-black uppercase shadow-xl hover:bg-red-700 z-[60] transition-colors"
+    >
+      Resume
     </a>
 
     <script>
-    /* =========================
+      /* =========================
     TAB SYSTEM
     ========================= */
-    function switchTab(pageId, anchorId = null) {
+      function switchTab(pageId, anchorId = null) {
         // Hide all pages
-        document.querySelectorAll('.page-container')
-            .forEach(page => page.classList.remove('active'));
+        document
+          .querySelectorAll(".page-container")
+          .forEach((page) => page.classList.remove("active"));
 
         // Show target page
         const targetPage = document.getElementById(pageId);
         if (!targetPage) return;
-        targetPage.classList.add('active');
+        targetPage.classList.add("active");
 
         // Close mobile menu (if open)
-        const navContent = document.getElementById('nav-content');
-        const navIcon = document.getElementById('nav-icon');
-        if (navContent) navContent.classList.remove('mobile-open');
-        if (navIcon) navIcon.className = 'fa-solid fa-bars';
+        const navContent = document.getElementById("nav-content");
+        const navIcon = document.getElementById("nav-icon");
+        if (navContent) navContent.classList.remove("mobile-open");
+        if (navIcon) navIcon.className = "fa-solid fa-bars";
 
         // Reset buttons
-        document.querySelectorAll('.tab-btn')
-            .forEach(btn => btn.classList.remove('bg-black', 'text-white'));
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((btn) => btn.classList.remove("bg-black", "text-white"));
 
         const btnMap = {
-            'front-page': 'btn-front',
-            'tech': 'btn-tech',
-            'lit-page': 'btn-lit',
-            'about-page': 'btn-about',
-            'contact': 'btn-contact'
+          "front-page": "btn-front",
+          tech: "btn-tech",
+          "lit-page": "btn-lit",
+          "about-page": "btn-about",
+          contact: "btn-contact",
         };
 
         const activeKey = anchorId || pageId;
         const activeBtn = document.getElementById(btnMap[activeKey]);
 
         if (activeBtn) {
-            activeBtn.classList.add('bg-black', 'text-white');
+          activeBtn.classList.add("bg-black", "text-white");
         }
 
         // Scroll logic
         if (anchorId) {
-            requestAnimationFrame(() => {
-                const element = document.getElementById(anchorId);
-                const nav = document.getElementById('nav');
+          requestAnimationFrame(() => {
+            const element = document.getElementById(anchorId);
+            const nav = document.getElementById("nav");
 
-                if (!element) return;
+            if (!element) return;
 
-                const offset = nav ? nav.offsetHeight + 40 : 100;
+            const offset = nav ? nav.offsetHeight + 40 : 100;
 
-                const y = element.getBoundingClientRect().top +
-                        window.pageYOffset -
-                        offset;
+            const y =
+              element.getBoundingClientRect().top + window.pageYOffset - offset;
 
-                window.scrollTo({ top: y, behavior: 'smooth' });
-            });
+            window.scrollTo({ top: y, behavior: "smooth" });
+          });
         } else {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }
-    }
+      }
 
-
-    /* =========================
+      /* =========================
     MOBILE NAV TOGGLE
     ========================= */
-    const navToggle = document.getElementById('nav-toggle');
-    const navContent = document.getElementById('nav-content');
-    const navIcon = document.getElementById('nav-icon');
+      const navToggle = document.getElementById("nav-toggle");
+      const navContent = document.getElementById("nav-content");
+      const navIcon = document.getElementById("nav-icon");
 
-    if (navToggle && navContent) {
-        navToggle.addEventListener('click', () => {
-            const isOpen = navContent.classList.toggle('mobile-open');
+      if (navToggle && navContent) {
+        navToggle.addEventListener("click", () => {
+          const isOpen = navContent.classList.toggle("mobile-open");
 
-            if (navIcon) {
-                navIcon.className = isOpen
-                    ? 'fa-solid fa-xmark'
-                    : 'fa-solid fa-bars';
-            }
+          if (navIcon) {
+            navIcon.className = isOpen
+              ? "fa-solid fa-xmark"
+              : "fa-solid fa-bars";
+          }
         });
-    }
+      }
 
-
-    /* =========================
+      /* =========================
     DATE & TIME
     ========================= */
-    function updateDateTime() {
+      function updateDateTime() {
         const now = new Date();
 
-        const date = now.toLocaleDateString('en-IN', {
-            weekday: 'short',
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
+        const date = now.toLocaleDateString("en-IN", {
+          weekday: "short",
+          year: "numeric",
+          month: "short",
+          day: "numeric",
         });
 
-        const time = now.toLocaleTimeString('en-IN', {
-            hour: '2-digit',
-            minute: '2-digit'
+        const time = now.toLocaleTimeString("en-IN", {
+          hour: "2-digit",
+          minute: "2-digit",
         });
 
-        const el = document.getElementById('datetime');
+        const el = document.getElementById("datetime");
         if (el) el.textContent = `${date} | ${time}`;
-    }
+      }
 
-    updateDateTime();
-    setInterval(updateDateTime, 25000);
+      updateDateTime();
+      setInterval(updateDateTime, 25000);
 
-
-    /* =========================
+      /* =========================
     SCROLL SPY
     ========================= */
-    window.addEventListener('scroll', () => {
-        const nav = document.getElementById('nav');
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("nav");
         if (!nav) return;
 
         const scrollPos = window.scrollY + nav.offsetHeight + 100;
 
         // FRONT PAGE SPY
-        const frontPage = document.getElementById('front-page');
-        if (frontPage && frontPage.classList.contains('active')) {
-            const techSection = document.getElementById('tech');
-            const frontBtn = document.getElementById('btn-front');
-            const techBtn = document.getElementById('btn-tech');
+        const frontPage = document.getElementById("front-page");
+        if (frontPage && frontPage.classList.contains("active")) {
+          const techSection = document.getElementById("tech");
+          const frontBtn = document.getElementById("btn-front");
+          const techBtn = document.getElementById("btn-tech");
 
-            if (techSection && scrollPos >= techSection.offsetTop) {
-                frontBtn?.classList.remove('bg-black', 'text-white');
-                techBtn?.classList.add('bg-black', 'text-white');
-            } else {
-                techBtn?.classList.remove('bg-black', 'text-white');
-                frontBtn?.classList.add('bg-black', 'text-white');
-            }
+          if (techSection && scrollPos >= techSection.offsetTop) {
+            frontBtn?.classList.remove("bg-black", "text-white");
+            techBtn?.classList.add("bg-black", "text-white");
+          } else {
+            techBtn?.classList.remove("bg-black", "text-white");
+            frontBtn?.classList.add("bg-black", "text-white");
+          }
         }
 
         // ABOUT PAGE SPY
-        const aboutPage = document.getElementById('about-page');
+        const aboutPage = document.getElementById("about-page");
 
-        if (aboutPage && aboutPage.classList.contains('active')) {
-            const contactSection = document.getElementById('contact');
-            const aboutBtn = document.getElementById('btn-about');
-            const contactBtn = document.getElementById('btn-contact');
+        if (aboutPage && aboutPage.classList.contains("active")) {
+          const contactSection = document.getElementById("contact");
+          const aboutBtn = document.getElementById("btn-about");
+          const contactBtn = document.getElementById("btn-contact");
 
-            if (contactSection && scrollPos >= contactSection.offsetTop) {
-                aboutBtn?.classList.remove('bg-black', 'text-white');
-                contactBtn?.classList.add('bg-black', 'text-white');
-            } else {
-                contactBtn?.classList.remove('bg-black', 'text-white');
-                aboutBtn?.classList.add('bg-black', 'text-white');
-            }
+          if (contactSection && scrollPos >= contactSection.offsetTop) {
+            aboutBtn?.classList.remove("bg-black", "text-white");
+            contactBtn?.classList.add("bg-black", "text-white");
+          } else {
+            contactBtn?.classList.remove("bg-black", "text-white");
+            aboutBtn?.classList.add("bg-black", "text-white");
+          }
         }
-    });
+      });
 
-
-    /* =========================
+      /* =========================
     CONTACT FORM
     ========================= */
-    const form = document.getElementById('contact-form');
+      const form = document.getElementById("contact-form");
 
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
+      if (form) {
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
 
-            const data = new FormData(form);
+          const data = new FormData(form);
 
-            try {
-                const response = await fetch('https://formspree.io/f/mnnpvwrz', {
-                    method: 'POST',
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
+          try {
+            const response = await fetch("https://formspree.io/f/mnnpvwrz", {
+              method: "POST",
+              body: data,
+              headers: {
+                Accept: "application/json",
+              },
+            });
 
-                const toast = document.createElement('div');
-                toast.className =
-                    "fixed bottom-10 left-1/2 -translate-x-1/2 px-4 py-2 text-white z-[9999]";
+            const toast = document.createElement("div");
+            toast.className =
+              "fixed bottom-10 left-1/2 -translate-x-1/2 px-4 py-2 text-white z-[9999]";
 
-                if (response.ok) {
-                    form.reset();
-                    toast.textContent = "Message sent successfully!";
-                    toast.classList.add("bg-black");
-                } else {
-                    toast.textContent = "Something went wrong.";
-                    toast.classList.add("bg-red-700");
-                }
-
-                document.body.appendChild(toast);
-                setTimeout(() => toast.remove(), 3000);
-
-            } catch (err) {
-                const toast = document.createElement('div');
-                toast.textContent = "Network error.";
-                toast.className =
-                    "fixed bottom-10 left-1/2 -translate-x-1/2 bg-red-700 text-white px-4 py-2 z-[9999]";
-
-                document.body.appendChild(toast);
-                setTimeout(() => toast.remove(), 3000);
+            if (response.ok) {
+              form.reset();
+              toast.textContent = "Message sent successfully!";
+              toast.classList.add("bg-black");
+            } else {
+              toast.textContent = "Something went wrong.";
+              toast.classList.add("bg-red-700");
             }
+
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+          } catch (err) {
+            const toast = document.createElement("div");
+            toast.textContent = "Network error.";
+            toast.className =
+              "fixed bottom-10 left-1/2 -translate-x-1/2 bg-red-700 text-white px-4 py-2 z-[9999]";
+
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+          }
         });
-    }
+      }
     </script>
-</body>
+  </body>
 </html>
